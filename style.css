@@ -1,0 +1,33 @@
+html{
+    font-size: 16px;
+
+}
+
+
+h1 {
+
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    color: white;
+    background: linear-gradient(to bottom right, blue, pink);
+    border-radius: 1.5rem;
+
+    /*
+    color: red;
+    background-color: aquamarine;
+    font-size: 3.14rem;
+    border: 0.1rem dashed black;
+    */
+    }
+
+.hoge {
+    color: rgb(10, 56, 68);
+    background-color: #c4e9e79a;
+    font-size: 1rem;
+    }
+
+.container {
+    display: flex;
+    }
