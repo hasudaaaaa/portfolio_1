@@ -1,9 +1,120 @@
 html{
     font-size: 16px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
 
+body{
+    margin: 0px;
+}
+h1{
+    margin: 0px;
+}
+/* ヘッダーのスタイル */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*background-color: #ffffff;*/
+    color: #000000;
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(10px);
+    background-image: linear-gradient(180deg, #e8ebf078, #ffffff94);
+    background-color: transparent;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*max-width: 1200px;*/
+    margin: 0 auto;
+    padding: 0 70px 0 20px;
+}
+.header-content a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 20px;
 }
 
 
+.nav-menu a:hover {
+    color: #4071a8;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+/* keyvisualのスタイル */
+.keyvisual{
+    width: 100%;
+    height: 100vw;
+    position: relative;
+}
+
+.keyvisual img{
+    width: 100%;
+    position: absolute;
+}
+
+.page_title{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: min(40vw, 58vh);
+    left: 5%;
+    font-size: min(10vw, 7rem);
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 例：画面幅が n px 以上の時 */
+@media screen and (2000px <= width) {
+    /* ここにスタイルを記述 */
+    .keyvisual{
+        top: -300px;
+        height: calc(100vw - 300px);
+    }
+    }
+
+.artworkArea{
+    padding: 2rem;
+}
+
+.heading1{
+
+    font-size: 3rem;
+}
+.dummy-contents{
+    height: 1500px;
+}
+footer{
+    padding: 4rem 3rem 3rem;
+    height: 20rem;
+    color: #ffffff;
+    background-color: #16212e;
+}
+/*
 h1 {
 
     font-size: 3rem;
@@ -14,12 +125,12 @@ h1 {
     background: linear-gradient(to bottom right, blue, pink);
     border-radius: 1.5rem;
 
-    /*
+    
     color: red;
     background-color: aquamarine;
     font-size: 3.14rem;
     border: 0.1rem dashed black;
-    */
+    
     }
 
 .hoge {
@@ -31,3 +142,4 @@ h1 {
 .container {
     display: flex;
     }
+*/
