@@ -89,7 +89,7 @@ main{
 }
 
 /* 例：画面幅が n px 以上の時 */
-@media screen and (2000px <= width) {
+@media screen and (1400px <= width) {
     /* ここにスタイルを記述 */
     .keyvisual{
         top: -300px;
