@@ -17,6 +17,17 @@
         gtag("config", "G-YKMB6PTS6F");
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Adobeフォント追加-->
+        <script> 
+            (function(d) {
+                var config = {
+                    kitId: 'xvn6gja',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+        </script>
     </head>
     <body>
         <header class="header">
@@ -57,8 +68,7 @@
                 </h1>
             </div>
 
-        
-            <section class="artworkArea">
+            <section class="section_type1">
                 <div class="artworkAreaHead">
                     <h1 class="heading1">
                         ARTWORKS
@@ -68,23 +78,26 @@
                     </p>
                 </div>
             </section>
-            <section class="profileArea">
+            <section class="section_type1">
                 <div class="profileAreaHead">
-                    <h1 class="heading1">
+                    <h1 class="heading1"  id="profile">
                         PROFILE
                     </h1>
                 </div>
             </section>
 
-
-            <div class="dummy-contents">
-                dummy-contents
-            </div>
         </main>
         <footer>
             <h1 class="logo">
-                PAGE PITLE
+                PAGE TITLE
             </h1>
+            <ul class="sns_links">
+                <li><a href="https://twitter.com/hasudaaaaaaa">twitter</a></li>
+                <li><a href="https://www.pixiv.net/users/46313245">pixiv</a></li>
+                <li><a href="https://bsky.app/profile/hasuda.org">Bluesky</a></li>
+                <li><a href="https://note.com/hasuda_nelumbo">note</a></li>
+            </ul>
+            <p>©hasuda</p>
         </footer>
 
         <!--
