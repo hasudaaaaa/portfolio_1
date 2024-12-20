@@ -6,7 +6,6 @@ html{
 
 body{
     margin: 0px;
-    
     font-family: urw-din-semi-condensed, hiragino-kaku-gothic-pron, sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -38,6 +37,7 @@ h1{
     /*max-width: 1200px;*/
     margin: 0 auto;
     padding: 0 70px 0 20px;
+    padding-right: 5vw;
 }
 .header-content a {
     color: #000000;
@@ -63,7 +63,7 @@ h1{
 
 
 .nav-menu a:hover {
-    color: #0e325c;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 main{
@@ -74,13 +74,52 @@ main{
 /* keyvisualのスタイル */
 .keyvisual{
     width: 100%;
-    height: min(100vw, 98vh);
+    height: min(97vw, 98vh);
     position: relative;
+    z-index: 0;
 }
 
 .keyvisual img{
     width: 100%;
     position: absolute;
+}
+/* Shakeアニメーションの定義（上下方向も含む） */
+@keyframes shake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translate(-0.2rem, -0.2rem);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translate(0.2rem, 0.2rem);
+    }
+}
+
+/* hover時にshakeアニメーションを適用 */
+.keyvisual_character img{
+    animation: shake 20s infinite ease-in-out;
+    animation-delay: 1.5s; /* 最も遅れて開始 */
+}
+.keyvisual_effect1 img{
+    animation: shake 10s infinite ease-in-out;
+    animation-delay: 1s; /* さらに遅れて開始 */
+}
+.keyvisual_front-obj img{
+    animation: shake 15s infinite ease-in-out;
+    animation-delay: 0.5s; /* 少し遅れて開始 */
+}
+.keyvisual_effect2 img{
+    animation: shake 10s infinite ease-in-out;
+    animation-delay: 0s;
+}
+/* 例：画面幅が n px 以上の時 */
+@media screen and (1400px <= width) {
+    /* ここにスタイルを記述 */
+    .keyvisual{
+        top: -300px;
+        height: calc(95vw - 300px);
+    }
 }
 
 .page_title{
@@ -89,7 +128,28 @@ main{
     top: min(40vw, 58vh);
     left: 5%;
     font-size: min(10vw, 7rem);
-    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+
+    /* 初期状態で画面外に配置 */
+    transform: translateX(20%);
+    opacity: 0;
+
+    /* アニメーション適用 */
+    animation: slide-in 0.3s ease-out forwards;
+}
+/* アニメーション定義 */
+@keyframes slide-in {
+    0% {
+        transform: translateX(20%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 .section_type1{
     padding: 1rem 3rem 1rem 3rem;
@@ -127,14 +187,7 @@ footer{
     color: #ffffff94;
 }
 
-/* 例：画面幅が n px 以上の時 */
-@media screen and (1400px <= width) {
-    /* ここにスタイルを記述 */
-    .keyvisual{
-        top: -300px;
-        height: calc(100vw - 300px);
-    }
-    }
+
 
 
 /*
