@@ -89,10 +89,10 @@ main{
         transform: translate(0, 0);
     }
     10%, 30%, 50%, 70%, 90% {
-        transform: translate(-0.2rem, -0.2rem);
+        transform: translate(-.15vw, -.15vw);
     }
     20%, 40%, 60%, 80% {
-        transform: translate(0.2rem, 0.2rem);
+        transform: translate(.15vw, .15vw);
     }
 }
 
@@ -130,7 +130,7 @@ main{
     font-size: min(10vw, 7rem);
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 
-    /* 初期状態で画面外に配置 */
+    /* 初期状態 */
     transform: translateX(20%);
     opacity: 0;
 
@@ -187,8 +187,22 @@ footer{
     color: #ffffff94;
 }
 
-
-
+.material-symbols-outlined{
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #969696;
+    color: #000000;
+    position: fixed;
+    z-index: 2000;
+    right: 30px;
+    bottom: 30px;
+    transition: all .5s ease;
+}
+.material-symbols-outlined:hover{
+    color: #4071a8;
+    padding: 1.2rem;
+}
 
 /*
 h1 {
