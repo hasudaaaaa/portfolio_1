@@ -40,16 +40,16 @@
             </div>
             <nav>
                 <ul class="nav-menu">
-                <li class="humburger-menu"><img src="images\icons\menu_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg" alt="hamburger-menu" /></li>
+                <li class="humburger-menu"><img src="images\icons\menu_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg" alt="hamburger-menu" class="menu-icon"/></li>
                 </ul>
             </nav>
             </div>
         </header>
         <div class="menu-overlay">
             <h1>MENU</h1>
-            <a href="/profile">Profile</a>
-            <a href="/artworks">Artworks</a>
-            <a href="/blog">Blog</a>
+            <a href="ComingSoon.html">Profile</a>
+            <a href="ComingSoon.html">Artworks</a>
+            <a href="ComingSoon.html">Blog</a>
         </div>
         
         <main>
@@ -75,7 +75,7 @@
                     PAGE<br>TITLE <!--ロゴのSVGファイル作って置換したい-->
                 </h1>
             </div>
-
+<!--
             <section class="section_type1">
                 <div class="artworkAreaHead">
                     <h1 class="heading1">
@@ -86,6 +86,7 @@
                     </p>
                 </div>
             </section>
+            -->
             <section class="section_type1">
                 <div class="profileAreaHead">
                     <h1 class="heading1"  id="profile">
@@ -96,17 +97,22 @@
                     </p>
                 </div>
             </section>
-
         </main>
         <footer>
             <h1 class="logo">
                 PAGE TITLE
             </h1>
+            <h2>Page sub-title</h2>
             <ul class="sns_links">
-                <li><a href="https://twitter.com/hasudaaaaaaa">twitter</a></li>
-                <li><a href="https://www.pixiv.net/users/46313245">pixiv</a></li>
-                <li><a href="https://bsky.app/profile/hasuda.org">Bluesky</a></li>
-                <li><a href="https://note.com/hasuda_nelumbo">note</a></li>
+                <li class="sns1"><a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
+                    <i class="icon">twitter</i>
+                </a></li>
+                <li class="sns2"><a href="https://www.pixiv.net/users/46313245" target="_blank" rel="noopener noreferrer">
+                    <i class="icon">Pixiv</i>
+                </a></li>
+                <li class="sns3"><a href="https://bsky.app/profile/hasuda.org" target="_blank" rel="noopener noreferrer">
+                    <i class="icon">Bluesky</i>
+                </a></li>
             </ul>
             <small class="copyright">©hasuda</small>
         </footer>
@@ -120,17 +126,30 @@
                 const menuButton = document.querySelector('.humburger-menu');
                 const menuOverlay = document.querySelector('.menu-overlay');
                 const overlay = document.createElement('div');
+                const menuIcon = menuButton.querySelector('.menu-icon');
+
                 overlay.className = 'overlay';
                 document.body.appendChild(overlay);
-        
+
+                const menuOpenIcon = "images/icons/menu_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg"; // 通常時
+                const menuCloseIcon = "images/icons/close_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg"; // 展開時
+
                 menuButton.addEventListener('click', () => {
-                    menuOverlay.classList.toggle('active');
-                    overlay.classList.toggle('active'); // ハンバーガーメニューの位置を変
+                    const isActive = menuOverlay.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    menuButton.classList.toggle('active');
+
+                    // アイコンを切り替え
+                    menuIcon.src = isActive ? menuCloseIcon : menuOpenIcon;
                 });
-        
+
                 overlay.addEventListener('click', () => {
                     menuOverlay.classList.remove('active');
-                    overlay.classList.remove('active'); // 元の位置に戻す
+                    overlay.classList.remove('active');
+                    menuButton.classList.remove('active');
+
+                    // アイコンを元に戻す
+                    menuIcon.src = menuOpenIcon;
                 });
             });
         </script>
