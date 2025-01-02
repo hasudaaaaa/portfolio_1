@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <title>ページのタイトル</title>
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="css\common.css" />
+        <link rel="stylesheet" href="css\style.css" />
         <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-YKMB6PTS6F"
@@ -45,7 +46,7 @@
             </nav>
             </div>
         </header>
-        <div class="menu-overlay">
+        <div class="menu-overlay glass-container-type1">
             <h1>MENU</h1>
             <a href="ComingSoon.html">Profile</a>
             <a href="ComingSoon.html">Artworks</a>
@@ -76,12 +77,12 @@
                 </h1>
             </div>
             <div class="profile-card">
-                <div class="profile-contents">
-                    <div class="profile-colomn1">
+                <div class="profile-contents glass-container-type2">
+                    <div class="profile-row1">
                         <div class="profile-avater">
                             <img src="images\089-1-trimed2.jpg" alt="profileavater" />
                         </div>
-                        <div class="profile-content">
+                        <div>
                             <h1 class="profile-display-name">蓮田</h1>
                             <p class="profile-handle">@hasuda.org</p>
                         </div>
@@ -99,29 +100,6 @@
                     </div>
                 </div>
             </div>
-<!--
-            <section class="section_type1">
-                <div class="artworkAreaHead">
-                    <h1 class="heading1">
-                        ARTWORKS
-                    </h1>
-                    <p>
-                        作品
-                    </p>
-                </div>
-            </section>
-            
-            <section class="section_type1">
-                <div class="profileAreaHead">
-                    <h1 class="heading1"  id="profile">
-                        PROFILE
-                    </h1>
-                    <p>
-                        プロフィール
-                    </p>
-                </div>
-            </section>
-            -->
         </main>
         <!--
         <div class="rollup_active">
@@ -132,56 +110,31 @@
         -->
         <footer>
             <div class="footer-contents">
-                <h1 class="logo">
-                    PAGE TITLE
-                </h1>
-                <h2>Page sub-title</h2>
-                <ul class="sns_links">
-                    <li class="sns1"><a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
-                        <i class="icon">twitter</i>
-                    </a></li>
-                    <li class="sns2"><a href="https://www.pixiv.net/users/46313245" target="_blank" rel="noopener noreferrer">
-                        <i class="icon">Pixiv</i>
-                    </a></li>
-                    <li class="sns3"><a href="https://bsky.app/profile/hasuda.org" target="_blank" rel="noopener noreferrer">
-                        <i class="icon">Bluesky</i>
-                    </a></li>
-                </ul>
-                <small class="copyright">©hasuda</small>
+                <div class="footer-row1">
+                    <div>
+                        <h1 class="logo">
+                            PAGE TITLE
+                        </h1>
+                        <h2>Page sub-title</h2>
+                    </div>
+                    <ul class="sns-links">
+                        <li class="sns1"><a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
+                            <img src="images\icons\brand-twitter1.svg" alt="twitter" class="sns-icon"/>
+                        </a></li>
+                        <li class="sns2"><a href="https://www.pixiv.net/users/46313245" target="_blank" rel="noopener noreferrer">
+                            <img src="images\icons\pixiv.svg" alt="pixiv" class="sns-icon"/>
+                        </a></li>
+                        <li class="sns3"><a href="https://bsky.app/profile/hasuda.org" target="_blank" rel="noopener noreferrer">
+                            <img src="images\icons\brand-bluesky.svg" alt="Bluesly" class="sns-icon"/>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-row1">
+                    <div></div>
+                    <small class="copyright">©hasuda All rights reserved.</small>
+                </div>
             </div>
         </footer>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const menuButton = document.querySelector('.humburger-menu');
-                const menuOverlay = document.querySelector('.menu-overlay');
-                const overlay = document.createElement('div');
-                const menuIcon = menuButton.querySelector('.menu-icon');
-
-                overlay.className = 'overlay';
-                document.body.appendChild(overlay);
-
-                const menuOpenIcon = "images/icons/menu_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg"; // 通常時
-                const menuCloseIcon = "images/icons/close_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg"; // 展開時
-
-                menuButton.addEventListener('click', () => {
-                    const isActive = menuOverlay.classList.toggle('active');
-                    overlay.classList.toggle('active');
-                    menuButton.classList.toggle('active');
-
-                    // アイコンを切り替え
-                    menuIcon.src = isActive ? menuCloseIcon : menuOpenIcon;
-                });
-
-                overlay.addEventListener('click', () => {
-                    menuOverlay.classList.remove('active');
-                    overlay.classList.remove('active');
-                    menuButton.classList.remove('active');
-
-                    // アイコンを元に戻す
-                    menuIcon.src = menuOpenIcon;
-                });
-            });
-        </script>
+        <script src="js\humburber-menu.js"></script>
     </body>
 </html>

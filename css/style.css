@@ -1,0 +1,161 @@
+/* keyvisualのスタイル */
+.keyvisual{
+    width: 100%;
+    height: min(97vw, 98vh);
+    height: 100svh;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.keyvisual img{
+    object-fit: cover;
+    object-position: 50% 40%;
+    width: 100%;
+    height: 100svh;
+    position: absolute;
+    inset: 0;
+}
+/* Shakeアニメーションの定義（上下方向も含む） */
+@keyframes shake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translate(-.2vw, -.2vw);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translate(.2vw, .2vw);
+    }
+}
+
+/* hover時にshakeアニメーションを適用 */
+.keyvisual_character img{
+    animation: shake 20s infinite ease-in-out;
+    animation-delay: 1.5s; /* 最も遅れて開始 */
+}
+.keyvisual_effect1 img{
+    animation: shake 10s infinite ease-in-out;
+    animation-delay: 1s; /* さらに遅れて開始 */
+}
+.keyvisual_front-obj img{
+    animation: shake 15s infinite ease-in-out;
+    animation-delay: 0.5s; /* 少し遅れて開始 */
+}
+.keyvisual_effect2 img{
+    animation: shake 10s infinite ease-in-out;
+    animation-delay: 0s;
+}
+
+.page_title{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: min(50vw, 58vh);
+    left: 5%;
+    font-size: min(10vw, 7rem);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+
+    /* 初期状態 */
+    transform: translateX(20%);
+    opacity: 0;
+
+    /* アニメーション適用 */
+    animation: slide-in 0.3s ease-out forwards;
+}
+/* アニメーション定義 */
+@keyframes slide-in {
+    0% {
+        transform: translateX(20%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.profile-card{
+    position: absolute;
+    z-index: 10;
+    top: 70vh;
+    left: 40%;
+    width: 400px;
+}
+@media screen and (700px >= width) {
+    .profile-card{
+        top: 60vh;
+        left: 1rem;
+        width: 90vw;
+    }
+}
+.profile-contents{
+    padding: 1rem;
+    border-radius: 10px;
+}
+.profile-row1{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+}
+.profile-avater{
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: solid 1px #000000a6;
+}
+.profile-avater img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-display-name{
+    font-size: 1.5rem;
+}
+.profile-handle{
+    margin-top: 0;
+    color: #000000a6;
+}
+.profile-links{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr;
+    gap: 1rem;
+    position: relative;
+    justify-content: start;
+}
+.button-type1{
+    background-color: #ffffff71;
+    border: solid 2px #00000056;
+    height: 40px;
+    border-radius: 20px;
+    min-width: 100px;
+    font-size: 15px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .3s ease-in-out, transform .05s ease-in-out;
+    position: relative;
+}
+.button-type1 a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+.section_type1{
+    padding: 1rem 3rem 1rem 3rem;
+    z-index: 2;
+    background-color: #ffffff;
+    height: 500px;
+}
+
+.heading1{
+    font-size: 2rem;
+}

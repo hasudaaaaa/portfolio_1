@@ -13,6 +13,22 @@ body{
 h1{
     margin: 0px;
 }
+
+/* This was made with GlassGenerator.netlify.app */ 
+.glass-container-type1{
+    color: white;
+    backdrop-filter: blur(7px);
+    background-color: rgba(65,101,113, 0.065);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 9px 5px;
+}
+.glass-container-type2{
+    color: #000000;
+    backdrop-filter: blur(7px);
+    background-color: rgba(65,101,113, 0.065);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 9px 5px;
+    background-image: linear-gradient(180deg, #e8ebf078, #ffffff94);
+}
+
 /* ヘッダーのスタイル */
 .header {
     position: fixed;
@@ -29,14 +45,13 @@ h1{
     background-image: linear-gradient(180deg, #e8ebf078, #ffffff94);
     */
     background-color: transparent;
-    background-color: #16212e;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*max-width: 1200px;*/
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 min(5vw, 20px) 0 20px;
 }
@@ -48,7 +63,6 @@ h1{
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .nav-menu {
@@ -59,6 +73,7 @@ h1{
 }
 .humburger-menu{
     padding: 0.2rem .2rem 0 .2rem;
+    transform: scale(1.2);
     border-radius: 7px;
     background-color: transparent;
     border: 1px solid #ffffff;
@@ -70,10 +85,14 @@ h1{
 }
 
 .nav-menu li:hover {
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
 }
 .humburger-menu {
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.menu-icon{
+    transition: transform 0.3s ease;
 }
 
 /* スライドインメニュー */
@@ -83,9 +102,7 @@ h1{
     right: -350px; /* 初期位置は画面外 */
     width: 300px;
     height: 100vh;
-    background-color: #444;
     color: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: right 0.3s ease; /* スライドアニメーション */
     z-index: 1000;
     padding: 70px 20px 20px 20px;
@@ -93,7 +110,11 @@ h1{
     flex-direction: column;
     gap: 20px;
 }
-
+.menu-overlay h1{
+    padding: 0.5rem 0 0.5rem 0;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
 .menu-overlay.active {
     right: 0; /* メニューが表示される位置 */
 }
@@ -105,7 +126,7 @@ h1{
 }
 
 .menu-overlay a:hover {
-    color: #ddd;
+    opacity: 0.7;
 }
 
 /* 背景オーバーレイ */
@@ -115,7 +136,7 @@ h1{
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 999;
     opacity: 0;
     visibility: hidden;
@@ -131,51 +152,47 @@ h1{
 main{
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
-    height: 70vh;
-    align-items: center;
-}
-
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px;
-}
-.section_type1{
-    padding: 1rem 3rem 1rem 3rem;
-    z-index: 2;
-    background-color: #ffffff;
-    
-}
-
-.heading1{
-    font-size: 3rem;
 }
 
 footer{
-    padding: 4rem 3rem 3rem;
-    height: 15rem;
+    padding: 4rem 0 2rem 0;
     color: #ffffff;
     background-color: #16212e;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
 }
-.sns_links{
-    list-style-type: none;
-    padding: 2rem 0 2rem 0;
-    margin: 0;
+.footer-contents{
+    padding-left: 0;
+}
+.footer-row1{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 min(5vw, 20px) 0 20px;
+    padding-bottom: 3rem;
 }
-.sns_links li {
-    margin-right: 1rem;
+footer h2{
+    font-size: 1rem;
 }
-.sns_links a{
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.sns-icon{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.sns_links a:hover {
-    color: #ffffff94;
+.sns-links{
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 2rem 2rem 2rem;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+}
+.sns-icon:hover {
+    opacity: 0.7;
 }
 
 .rollup_active img{
