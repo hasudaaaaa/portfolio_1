@@ -1,3 +1,13 @@
+.header-content a {
+    color: #ffffff;
+}
+.humburger-menu{
+    border: solid 1px #ffffff93;
+}
+.menu-icon{
+    filter: brightness(1);
+}
+
 /* keyvisualのスタイル */
 .keyvisual{
     width: 100%;
@@ -12,7 +22,7 @@
     object-fit: cover;
     object-position: 50% 40%;
     width: 100%;
-    height: 100svh;
+    height: 100lvh;
     position: absolute;
     inset: 0;
 }
@@ -83,6 +93,10 @@
     top: 70vh;
     left: 40%;
     width: 400px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 2px 3px 6px 5px;
+    border-bottom: 2px rgba(40,40,40,0.35) solid;
+    border-right: 2px rgba(40,40,40,0.35) solid;
 }
 @media screen and (700px >= width) {
     .profile-card{
@@ -93,13 +107,12 @@
 }
 .profile-contents{
     padding: 1rem;
-    border-radius: 10px;
 }
 .profile-row1{
     display: grid;
     grid-template-columns: 80px 1fr;
     align-items: flex-start;
-    gap: 16px;
+    gap: 1.5rem;
     position: relative;
 }
 .profile-avater{
