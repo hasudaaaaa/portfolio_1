@@ -1,19 +1,22 @@
 main h2{
     margin: 0;
 }
-
+section{
+    padding-bottom: 80px;
+}
 .bio{
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
 }
 @media screen and (max-width: 700px) {
     .bio{
         flex-direction: column;
+        gap: 1.5rem;
     }
 }
 .profile-avater{
     aspect-ratio: 1 / 1;
-    border-radius: 50%;
+    border-radius: 8%;
     overflow: hidden;
     border: solid 1px #000000a6;
     width: min(400px, 30vw);
@@ -21,4 +24,13 @@ main h2{
 }
 .brightness-0{
     filter: brightness(0.1);
+}
+.sns-links{
+    padding-bottom: 2rem;
+}
+.button-row{
+    display: flex;
+}
+.button-row .button-type1{
+    margin-left: auto;
 }

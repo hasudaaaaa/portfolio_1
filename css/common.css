@@ -3,6 +3,18 @@ html{
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
 }
+body{
+    margin: 0px;
+    font-family: urw-din-semi-condensed, hiragino-kaku-gothic-pron, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    min-height: 75vh;
+    background-color: #f7f7f7;
+}
 ::selection{
     background-color: #000000;
     color: #ffffff;
@@ -10,14 +22,28 @@ html{
 img{
     user-select: none;
 }
-body{
-    margin: 0px;
-    font-family: urw-din-semi-condensed, hiragino-kaku-gothic-pron, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-}
+
 h1{
     margin: 0px;
+}
+article a{
+    font-weight: 600;
+    color: #000000;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+article p a:hover{
+    color: #4071a8;
+    text-decoration: underline;
+}
+article p{
+    line-height: 1.8;
+}
+article li{
+    line-height: 1.8;
+}
+ul{
+    padding-left: 1rem;
 }
 .W3{
     font-weight: 300;
@@ -32,9 +58,38 @@ h1{
 .glass-container-type2{
     color: #000000;
     backdrop-filter: blur(7px);
-    background-image: linear-gradient(180deg, #e8ebf078, #ffffff94);
+    background-image: linear-gradient(180deg, #e8ebf078, #f7f7f794);
+}
+.button-type1{
+    background-color: #ffffff71;
+    border: solid 2px #00000056;
+    height: 40px;
+    border-radius: 20px;
+    min-width: 100px;
+    font-size: 15px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .3s ease-in-out, transform .05s ease-in-out;
+    position: relative;
+}
+.button-type1:hover{
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+.button-type1 a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
 }
 
+.section_type1{
+    padding: 1rem 3rem 1rem 3rem;
+    z-index: 2;
+    background-color: #ffffff;
+    height: 500px;
+}
 /* ヘッダーのスタイル */
 .header {
     position: fixed;
@@ -154,11 +209,7 @@ h1{
     visibility: visible;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    min-height: 75vh;
-}
+
 .layout{
     margin-left: auto;
     margin-right: auto;
@@ -201,11 +252,13 @@ footer{
 }
 footer h2{
     font-size: 1rem;
+    margin: 0 0 1rem 0;
 }
 .sns-icon{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.3s ease;
 }
 .sns-links{
     padding: 0;
