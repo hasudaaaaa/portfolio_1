@@ -3,7 +3,13 @@ html{
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
 }
-
+::selection{
+    background-color: #000000;
+    color: #ffffff;
+}
+img{
+    user-select: none;
+}
 body{
     margin: 0px;
     font-family: urw-din-semi-condensed, hiragino-kaku-gothic-pron, sans-serif;
@@ -13,7 +19,9 @@ body{
 h1{
     margin: 0px;
 }
-
+.W3{
+    font-weight: 300;
+}
 /* This was made with GlassGenerator.netlify.app */ 
 .glass-container-type1{
     color: white;
@@ -88,35 +96,43 @@ h1{
 .menu-overlay {
     position: fixed;
     top: 0;
-    right: -350px; /* 初期位置は画面外 */
-    width: 300px;
+    right: -450px; /* 初期位置は画面外 */
+    width: min(400px, 85vw);
     height: 100vh;
     color: white;
     transition: right 0.3s ease; /* スライドアニメーション */
     z-index: 1000;
-    padding: 70px 0px 20px 20px;
+    padding: 100px 0px 20px 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 3rem;
     border-left: 2px rgb(71 103 122 / 35%) solid;
 }
-.menu-overlay h1{
-    padding: 0.5rem 0 0.5rem 0;
-    border-top: 1px solid #ffffff69;
-    border-bottom: 1px solid #ffffff69;
+.menu-overlay a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 3rem 0.5rem 0;
+    border-bottom: #ffffff00 1px solid;
+    transition: all 0.3s ease;
+}
+.menu-overlay div{
+    font-size: 1.2rem;
+}
+.menu-overlay small{
+    font-size: 1rem;
+    letter-spacing: .05rem;
+    font-weight: 300;
 }
 .menu-overlay.active {
     right: 0; /* メニューが表示される位置 */
 }
-
-.menu-overlay a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
 .menu-overlay a:hover {
     opacity: 0.7;
+    border-bottom: #ffffffaf 1px solid;
 }
 
 /* 背景オーバーレイ */
@@ -155,7 +171,7 @@ main{
 .page-head{
     display: flex;
     align-items: baseline;
-    gap: 0.5rem;
+    gap: 1rem;
     padding-bottom: 0.5rem;
     margin-bottom: 4rem;
     border-bottom: solid 3px #000000;

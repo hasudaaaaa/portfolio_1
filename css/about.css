@@ -1,10 +1,15 @@
 main h2{
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .bio{
     display: flex;
-    gap: 6rem;
+    gap: 3rem;
+}
+@media screen and (max-width: 700px) {
+    .bio{
+        flex-direction: column;
+    }
 }
 .profile-avater{
     aspect-ratio: 1 / 1;
@@ -13,4 +18,7 @@ main h2{
     border: solid 1px #000000a6;
     width: min(400px, 30vw);
     height: auto;
+}
+.brightness-0{
+    filter: brightness(0.1);
 }

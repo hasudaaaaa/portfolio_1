@@ -1,114 +1,124 @@
 <!DOCTYPE html>
-    <html lang="ja">
-        <head>
-            <meta charset="UTF-8" />
-            <title>プロフィール | PAGE TITLE</title>
-            <link rel="stylesheet" href="css\common.css" />
-            <link rel="stylesheet" href="css\about.css" />
-            <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-YKMB6PTS6F"
-            ></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag() {
-                dataLayer.push(arguments);
-                }
-                gtag("js", new Date());
-                gtag("config", "G-YKMB6PTS6F");
-                </script>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Adobeフォント追加-->
-                <script> 
-                    (function(d) {
-                        var config = {
-                            kitId: 'xvn6gja',
-                            scriptTimeout: 3000,
-                            async: true
-                        },
-                        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-                    })(document);
-                </script>
-        <!--Google Material icons-->
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_upward" />
-                
-        </head>
-        <body>
-            <header class="header glass-container-type2">
-                <div class="header-content">
-                <div class="logo">
-                    <a href="index.html">PAGE TITLE</a>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>プロフィール | PAGE TITLE</title>
+        <link rel="stylesheet" href="css\common.css" />
+        <link rel="stylesheet" href="css\about.css" />
+        <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-YKMB6PTS6F"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+            dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-YKMB6PTS6F");
+            </script>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Adobeフォント追加-->
+            <script> 
+                (function(d) {
+                    var config = {
+                        kitId: 'xvn6gja',
+                        scriptTimeout: 3000,
+                        async: true
+                    },
+                    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+                })(document);
+            </script>
+    <!--Google Material icons-->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_upward" />
+            
+    </head>
+    <body>
+        <header class="header glass-container-type2">
+            <div class="header-content">
+            <div class="logo">
+                <a href="index.html">PAGE TITLE</a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                <li class="humburger-menu"><img src="images\icons\menu_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg" alt="hamburger-menu" class="menu-icon"/></li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+        <div class="menu-overlay glass-container-type1">
+        <a href="about.html"><div>プロフィール</div><small>Profile</small></a>
+        <a href="ComingSoon.html"><div>作品一覧</div><small>Artworks</small></a>
+        <a href="ComingSoon.html"><div>ブログ</div><small>Blog</small></a>
+        </div>
+        <main>
+            <div class="layout">
+                <div class="main-section">
+                    <hgroup class="page-head">
+                        <h1>プロフィール</h1>
+                        <small>PROFILE</small>
+                    </hgroup>
+                    <article>
+                        
+                        <section class="bio">
+                            <div>
+                                <img src="images\index\089-1-trimed2.webp" class="profile-avater"/>
+                            </div>
+                            <div class="resume">
+                                <h2>蓮田</h2>
+                                <small>hasuda.org</small>
+                                <ul class="sns-links brightness-0">
+                                    <li class="sns1"><a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
+                                        <img src="images\icons\brand-twitter1.svg" alt="twitter" class="sns-icon"/>
+                                    </a></li>
+                                    <li class="sns2"><a href="https://www.pixiv.net/users/46313245" target="_blank" rel="noopener noreferrer">
+                                        <img src="images\icons\pixiv.svg" alt="pixiv" class="sns-icon"/>
+                                    </a></li>
+                                    <li class="sns3"><a href="https://bsky.app/profile/hasuda.org" target="_blank" rel="noopener noreferrer">
+                                        <img src="images\icons\brand-bluesky.svg" alt="Bluesly" class="sns-icon"/>
+                                    </a></li>
+                                </ul>
+                                <p class="W3">
+                                    Lorem ipsum : 親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+                                </p>
+                            </div>
+                        </section>
+                    </article>
                 </div>
-                <nav>
-                    <ul class="nav-menu">
-                    <li class="humburger-menu"><img src="images\icons\menu_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg" alt="hamburger-menu" class="menu-icon"/></li>
+            </div>
+        </main>
+        <div class="rollup">
+            <a href="#">
+                <img class="glass-container-type2" src="images\icons\arrow_upward_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg" alt="a" />
+            </a>
+        </div>
+        <footer>
+            <div class="footer-contents">
+                <div class="footer-row1 footer-line">
+                    <div>
+                        <h1 class="logo">
+                            PAGE TITLE
+                        </h1>
+                        <h2>Page sub-title</h2>
+                    </div>
+                    <ul class="sns-links">
+                        <li class="sns1"><a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
+                            <img src="images\icons\brand-twitter1.svg" alt="twitter" class="sns-icon"/>
+                        </a></li>
+                        <li class="sns2"><a href="https://www.pixiv.net/users/46313245" target="_blank" rel="noopener noreferrer">
+                            <img src="images\icons\pixiv.svg" alt="pixiv" class="sns-icon"/>
+                        </a></li>
+                        <li class="sns3"><a href="https://bsky.app/profile/hasuda.org" target="_blank" rel="noopener noreferrer">
+                            <img src="images\icons\brand-bluesky.svg" alt="Bluesly" class="sns-icon"/>
+                        </a></li>
                     </ul>
-                </nav>
                 </div>
-            </header>
-            <div class="menu-overlay glass-container-type1">
-                <h1>MENU</h1>
-                <a href="ComingSoon.html">Profile</a>
-                <a href="ComingSoon.html">Artworks</a>
-                <a href="ComingSoon.html">Blog</a>
+                <div class="footer-row1">
+                    <div></div>
+                    <small class="copyright">© hasuda All rights reserved.</small>
+                </div>
             </div>
-            <main>
-                <div class="layout">
-                    <div class="main-section">
-                        <hgroup class="page-head">
-                            <h1>プロフィール</h1>
-                            <small>PROFILE</small>
-                        </hgroup>
-                        <article>
-                            
-                            <section class="bio">
-                                <div>
-                                    <img src="images\index\089-1-trimed2.webp" class="profile-avater"/>
-                                </div>
-                                <div class="resume">
-                                    <h2>蓮田</h2>
-                                    <small>hasuda.org</small>
-                                    <p>
-                                        Lorem ipsum : 親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
-                                    </p>
-                                </div>
-                            </section>
-                        </article>
-                    </div>
-                </div>
-            </main>
-            <div class="rollup">
-                <a href="#">
-                    <img class="glass-container-type2" src="images\icons\arrow_upward_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg" alt="a" />
-                </a>
-            </div>
-            <footer>
-                <div class="footer-contents">
-                    <div class="footer-row1 footer-line">
-                        <div>
-                            <h1 class="logo">
-                                PAGE TITLE
-                            </h1>
-                            <h2>Page sub-title</h2>
-                        </div>
-                        <ul class="sns-links">
-                            <li class="sns1"><a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
-                                <img src="images\icons\brand-twitter1.svg" alt="twitter" class="sns-icon"/>
-                            </a></li>
-                            <li class="sns2"><a href="https://www.pixiv.net/users/46313245" target="_blank" rel="noopener noreferrer">
-                                <img src="images\icons\pixiv.svg" alt="pixiv" class="sns-icon"/>
-                            </a></li>
-                            <li class="sns3"><a href="https://bsky.app/profile/hasuda.org" target="_blank" rel="noopener noreferrer">
-                                <img src="images\icons\brand-bluesky.svg" alt="Bluesly" class="sns-icon"/>
-                            </a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-row1">
-                        <div></div>
-                        <small class="copyright">©hasuda All rights reserved.</small>
-                    </div>
-                </div>
-            </footer>
-            <script src="js\humburber-menu.js"></script>
-        </body>
-    </html>
+        </footer>
+        <script src="js\humburber-menu.js"></script>
+    </body>
+</html>
