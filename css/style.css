@@ -92,7 +92,7 @@
 .profile-card{
     position: absolute;
     z-index: 10;
-    top: 70vh;
+    top: 60vh;
     left: 40%;
     width: 400px;
     border-radius: 10px;

@@ -153,6 +153,11 @@ article ul{
     filter: brightness(0.1);
     transition: transform 0.3s ease;
 }
+@media (prefers-color-scheme: dark) {
+    .menu-icon{
+        filter: brightness(1);
+    }
+}
 
 /* スライドインメニュー */
 .menu-overlay {
