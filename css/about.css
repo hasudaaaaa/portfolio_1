@@ -1,6 +1,9 @@
 main h2{
     margin: 0;
 }
+main h3 {
+    margin-top: 0;
+}
 section{
     padding-bottom: 80px;
 }
@@ -30,7 +33,28 @@ section{
 }
 .button-row{
     display: flex;
+    justify-content: flex-end;
 }
 .button-row .button-type1{
     margin-left: auto;
+}
+.making{
+    display: flex;
+    gap: 4rem;
+    padding-bottom: 4rem;
+}
+.making img{
+    width: 400px;
+    height: auto;
+    object-fit: scale-down;
+    border-radius: 10px;
+}
+@media screen and (max-width: 700px) {
+    .making{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .making img{
+        width: 100%;
+    }
 }

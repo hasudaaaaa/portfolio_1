@@ -1,3 +1,4 @@
+/* リセットCSS */
 html{
     font-size: 16px;
     scroll-behavior: smooth;
@@ -41,6 +42,12 @@ article p{
 }
 article li{
     line-height: 1.8;
+}
+article img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
 }
 ul{
     padding-left: 1rem;
@@ -209,7 +216,7 @@ ul{
     visibility: visible;
 }
 
-
+/* メインコンテンツのスタイル */
 .layout{
     margin-left: auto;
     margin-right: auto;
@@ -224,9 +231,18 @@ ul{
     align-items: baseline;
     gap: 1rem;
     padding-bottom: 0.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     border-bottom: solid 3px #000000;
 }
+.page-head2{
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 2.5rem;
+    margin-bottom: 5rem;
+    border-top: solid 1px #00000096;
+}
+/* フッターのスタイル */
 footer{
     padding: 4rem 0 2rem 0;
     color: #ffffff;
