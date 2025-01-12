@@ -102,7 +102,8 @@
 }
 @media screen and (700px >= width) {
     .profile-card{
-        top: 60vh;
+        bottom: 160px;
+        top: auto;
         left: 1rem;
         width: 90vw;
     }
