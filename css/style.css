@@ -62,7 +62,9 @@
     position: absolute;
     top: min(50vw, 58vh);
     left: 5%;
-    font-size: min(10vw, 7rem);
+    font-size: min(6vw, 5rem);
+    font-weight: 600;
+    line-height: 1.2;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 
     /* 初期状態 */

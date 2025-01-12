@@ -31,6 +31,11 @@ section{
 .sns-links{
     padding-bottom: 2rem;
 }
+@media (prefers-color-scheme: dark){
+    .brightness-0{
+        filter: brightness(1);
+    }
+}
 .button-row{
     display: flex;
     justify-content: flex-end;
