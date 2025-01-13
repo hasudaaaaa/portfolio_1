@@ -20,15 +20,19 @@
     border-radius: 8px;
     transition: opacity 0.2s;
 }
-.artworks-item img:hover{
-    opacity: 0.7;
-}
 .artworks-item h3{
     color: rgb(41, 41, 41);
     font-size: 1rem;
     line-height: 1;
     margin: 0;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .artworks-item a{
     text-decoration: none;
+}
+.artworks-item a:hover{
+    opacity: 0.8;
 }

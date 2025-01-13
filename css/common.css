@@ -17,7 +17,7 @@ main{
     background-color: #f7f7f7;
 }
 ::selection{
-    background-color: #000000;
+    background-color: #212121;
     color: #ffffff;
 }
 img{
@@ -26,6 +26,10 @@ img{
 
 h1{
     margin: 0px;
+    font-weight: 600;
+}
+h2, h3, h4, h5, h6{
+    font-weight: 600;
 }
 article a{
     font-weight: 600;
@@ -233,6 +237,7 @@ article ul{
 }
 .page-head{
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: 1rem;
     padding-bottom: 0.5rem;
@@ -241,6 +246,7 @@ article ul{
 }
 .page-head2{
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: 1rem;
     padding-top: 2.5rem;
