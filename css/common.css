@@ -57,7 +57,9 @@ article ul{
     padding-left: 1rem;
 }
 .W3{
+    font-family: urw-din, hiragino-kaku-gothic-pron, sans-serif;
     font-weight: 300;
+    font-style: normal;
 }
 /* This was made with GlassGenerator.netlify.app */ 
 .glass-container-type1{
@@ -195,8 +197,6 @@ article ul{
 }
 .menu-overlay small{
     font-size: 1rem;
-    letter-spacing: .05rem;
-    font-weight: 300;
 }
 .menu-overlay.active {
     right: 0; /* メニューが表示される位置 */

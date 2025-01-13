@@ -143,5 +143,5 @@
     grid-template-columns: 0.3fr 0.3fr;
     gap: 1rem;
     position: relative;
-    justify-content: start;
+    justify-content: space-evenly;
 }
