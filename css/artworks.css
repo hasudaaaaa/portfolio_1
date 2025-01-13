@@ -13,12 +13,22 @@
     flex-direction: column;
     gap: 0;
 }
+.thumbnail-frame{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+}
 .artworks-item img{
     object-fit: cover;
     object-position: center center;
     width: 100%;
+    height: 150px;
     border-radius: 8px;
-    transition: opacity 0.2s;
+    transition: all 0.3s;
+}
+.artworks-item img:hover{
+    transform: scale(1.15);
 }
 .artworks-item h3{
     color: rgb(41, 41, 41);
@@ -34,5 +44,5 @@
     text-decoration: none;
 }
 .artworks-item a:hover{
-    opacity: 0.8;
+    text-decoration: underline;
 }

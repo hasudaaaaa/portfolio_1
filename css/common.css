@@ -174,7 +174,7 @@ article ul{
     height: 100vh;
     color: white;
     transition: right 0.3s ease; /* スライドアニメーション */
-    z-index: 1000;
+    z-index: 1001;
     padding: 100px 0px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -306,7 +306,7 @@ footer h2{
     border: 1px solid #969696;
     color: #000000;
     position: fixed;
-    z-index: 2000;
+    z-index: 500;
     right: 30px;
     bottom: 50px;
     transition: all .3s ease;
