@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbnails = document.querySelectorAll('.main-artwork img');
     const modal = document.querySelector('.image-modal');
     const modalContent = document.querySelector('.modal-content');
+    const modalContainer = document.querySelector('.modal-container');
     const closeBtn = document.querySelector('.close-btn');
 
     thumbnails.forEach(thumbnail => {
@@ -17,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active'); // 背景クリックでモーダルを非表示
+        // モーダル背景またはモーダルコンテナをクリックした場合のみ閉じる
+        if (e.target === modal || e.target === modalContainer) {
+            modal.classList.remove('active'); // モーダルを非表示
             modalContent.src = ''; // モーダル画像をリセット
         }
     });
