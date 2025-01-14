@@ -56,6 +56,12 @@ article img{
 article ul{
     padding-left: 1rem;
 }
+article .tweet-widget{
+    padding-top: 2rem;
+    width: 300px;
+    margin: 0 auto;
+}
+
 button {
     padding: 0;
     border: none;

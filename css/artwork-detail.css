@@ -33,11 +33,6 @@
 .artwork-caption h1{
     font-size: 2rem;
 }
-.tweet-widget{
-    padding-top: 2rem;
-    width: 300px;
-    margin: 0 auto;
-}
 
 @media screen and (width <= 1024px){
     .artwork-detail{
