@@ -32,7 +32,7 @@ h2, h3, h4, h5, h6{
     font-weight: 600;
 }
 article a{
-    font-weight: 600;
+
     color: #000000;
     text-decoration: underline;
     transition: all 0.3s ease;
@@ -175,6 +175,8 @@ button {
 }
 
 .menu-icon{
+    width: 1.5rem;
+    height: 1.5rem;
     filter: brightness(0.1);
     transition: transform 0.3s ease;
 }
@@ -334,4 +336,14 @@ footer h2{
     transform: translate(0, -5px);
     box-shadow: #4071a8 0px 5px 0px 0px;
     scale: 1.1;
+}
+.css-kanzenn-rikai{
+    width: 105px;
+    height: 30px;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 2rem 0;
+    white-space: nowrap;
 }
