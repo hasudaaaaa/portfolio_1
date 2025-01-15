@@ -326,6 +326,7 @@ footer h2{
     transition: all .3s ease;
 }
 .rollup img:hover{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px 0px;
+    transform: translate(0, -5px);
+    box-shadow: #4071a8 0px 5px 0px 0px;
     scale: 1.1;
 }

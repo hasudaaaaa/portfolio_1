@@ -101,6 +101,9 @@
     border-right: 2px rgba(40,40,40,0.35) solid;
 }
 @media screen and (700px >= width) {
+    .page_title{
+        display: none;
+    }
     .profile-card{
         bottom: 1rem;
         top: auto;
