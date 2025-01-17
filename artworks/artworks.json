@@ -1,0 +1,50 @@
+[
+    {
+        "imagePath": "/images/artworks/No-104/104-2s.webp",
+        "thumbnailPath": "/images/artworks/No-104/104-2s-thumb.png",
+        "pageURL": "/artworks/No-104.html",
+        "number": "104",
+        "title": "斜映の作業場",
+        "date": "2025年1月12日"
+    },
+    {
+        "imagePath": "/images/artworks/No-104/102-1.webp",
+        "thumbnailPath": "/images/artworks/No-102/102-1-thumb.png",
+        "pageURL": "/artworks/No-102.html",
+        "number": "102",
+        "title": "breach",
+        "date": "2025年1月5日"
+    },
+    {
+        "imagePath": "/images/artworks/No-101/101-4-web.jpg",
+        "thumbnailPath": "/images/artworks/No-101/101-4-thumb.png",
+        "pageURL": "/ComingSoon.html",
+        "number": "101",
+        "title": "🐍2025🐍",
+        "date": "2025年1月1日"
+    },
+    {
+        "imagePath": "/images/artworks/No-094/094-2s.webp",
+        "thumbnailPath": "/images/artworks/No-094/094-2s-tumb.jpg",
+        "pageURL": "/ComingSoon.html",
+        "number": "094",
+        "title": "四工大コンピ CDラベル用イラスト",
+        "date": "2024年11月2日"
+    },
+    {
+        "imagePath": "/images/artworks/No-089/089-1s.jpg",
+        "thumbnailPath": "/images/artworks/No-089/089-1-thumb.png",
+        "pageURL": "/ComingSoon.html",
+        "number": "089",
+        "title": "LIGHTWEIGHT TRIP",
+        "date": "2024年11月2日"
+    },
+    {
+        "imagePath": "/images/artworks/no-img.svg",
+        "thumbnailPath": "/images/artworks/no-img.svg",
+        "pageURL": "/ComingSoon.html",
+        "number": "000",
+        "title": "準備中",
+        "date": "1900年1月0日"
+    }
+]
