@@ -2,10 +2,17 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
-        <title>Artwork No.104 - hasuda.org</title><!---->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--===============================================================================================-->
+        <title>Artwork No.104 - hasuda.org</title>
         <link rel="stylesheet" href="/css\common.css" />
         <link rel="stylesheet" href="/css\artwork-detail.css" />
-        <link rel="canonical" href="https://hasuda.org/artworks\No-104"><!---->
+        <link rel="canonical" href="https://hasuda.org/artworks\No-104">
+        <meta property="og:url" content="https://hasuda.org/artworks\No-104" />
+        <meta property="og:description" content="hasuda's portfolio site" />
+        <meta property="twitter:description" content="hasuda's portfolio site" />
+<!--===============================================================================================-->
+    <!--Google Analytics-->
         <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-YKMB6PTS6F"
@@ -18,8 +25,8 @@
             gtag("js", new Date());
             gtag("config", "G-YKMB6PTS6F");
             </script>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Adobeフォント追加-->
+    <!--End of Google Analytics-->
+    <!--Adobefonts-->
             <script> 
                 (function(d) {
                     var config = {
@@ -30,21 +37,20 @@
                     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
                 })(document);
             </script>
+    <!--End of Adobefonts-->
     <!--OGPの設定-->
         <meta name="description" content="hasuda's portfolio site" />
         <meta property="og:title" content="hasuda.org" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="hasuda.org" />
-        <meta property="og:description" content="hasuda's portfolio site" />
         <meta property="og:image" content="https://hasuda.org/images/og-image.webp" />
-        <meta property="og:url" content="https://hasuda.org/artworks\No-104" /><!---->
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="hasuda.org" />
-        <meta property="twitter:description" content="hasuda's portfolio site" />
         <meta property="twitter:image" content="https://hasuda.org/images/og-image.webp" />
         <meta property="twitter:site" content="@hasudaaaaaaa" />
         <meta property="twitter:creator" content="@hasudaaaaaaa" />
         <meta property="twitter:domain" content="hasuda.org" />
+    <!--End of OGP-->
     </head>
     <body>
         <header class="header glass-container-type2">
@@ -59,11 +65,7 @@
             </nav>
             </div>
         </header>
-        <div class="menu-overlay glass-container-type1">
-            <a href="/about.html"><div>プロフィール</div><small class="W3">Profile</small></a>
-            <a href="/artworks\artworks.html"><div>作品一覧</div><small  class="W3">Artworks</small></a>
-            <a href="/ComingSoon.html"><div>ブログ</div><small  class="W3">Blog</small></a>
-        </div>
+        <div class="menu-overlay glass-container-type1" id="menu-overlay"><!--js\common-element-loader.js の埋め込み先--></div>
         <main>
             <div class="layout">
                 <div class="main-section">
@@ -84,6 +86,11 @@
                             <!----><div class="tweet-widget"><blockquote class="twitter-tweet"><p lang="fr" dir="ltr">Gouache <a href="https://t.co/Msc6CBZZVk">pic.twitter.com/Msc6CBZZVk</a></p>&mdash; 蓮田 (@hasudaaaaaaa) <a href="https://twitter.com/hasudaaaaaaa/status/1878401524470305251?ref_src=twsrc%5Etfw">January 12, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
                             </div>
                         </section>
+                        <section class="back-to-artworks">
+                            <a href="/artworks\artworks.html"><div class="button-type1 glass-container-type2">
+                                <div>一覧に戻る</div>
+                            </div></a>
+                        </section>
                     </article>
                 </div>
             </div>
@@ -95,38 +102,9 @@
             <!----><img class="modal-content" src="/images\artworks\No-104\104-2s.webp" alt="Expanded View" />
             </div>
         </div>
-        <div class="rollup">
-            <a href="#">
-                <img class="glass-container-type2" src="/images\icons\arrow_upward_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg" alt="a" />
-            </a>
-        </div>
-        <footer>
-            <div class="footer-contents">
-                <div class="footer-row1 footer-line">
-                    <div>
-                        <h1 class="logo">
-                            HASUDA.ORG
-                        </h1>
-                        <h2>Hasuda's Portfolio site</h2>
-                    </div>
-                    <ul class="sns-links">
-                        <li class="sns1"><a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
-                            <img src="/images\icons\brand-twitter1.svg" alt="twitter" class="sns-icon"/>
-                        </a></li>
-                        <li class="sns2"><a href="https://www.pixiv.net/users/46313245" target="_blank" rel="noopener noreferrer">
-                            <img src="/images\icons\pixiv.svg" alt="pixiv" class="sns-icon"/>
-                        </a></li>
-                        <li class="sns3"><a href="https://bsky.app/profile/hasuda.org" target="_blank" rel="noopener noreferrer">
-                            <img src="/images\icons\brand-bluesky.svg" alt="Bluesly" class="sns-icon"/>
-                        </a></li>
-                    </ul>
-                </div>
-                <div class="footer-row1">
-                    <div></div>
-                    <small class="copyright">© hasuda All rights reserved.</small>
-                </div>
-            </div>
-        </footer>
+        <div class="rollup" id="rollup"><!--js\common-element-loader.js の埋め込み先--></div>
+        <footer id="footer"><!--js\common-element-loader.js の埋め込み先--></footer>
+        <script src="/js\common-element-loader.js"></script>
         <script src="/js\humburber-menu.js"></script>
         <script src="/js\modal-window.js"></script>
     </body>

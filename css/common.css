@@ -201,6 +201,7 @@ button {
     flex-direction: column;
     gap: 3rem;
     border-left: 2px rgb(71 103 122 / 35%) solid;
+    background-color: #121c29c9;
 }
 .menu-overlay a{
     color: white;

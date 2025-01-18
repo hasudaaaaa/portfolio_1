@@ -46,6 +46,13 @@
         gap: 2rem;
     }
 }
+.back-to-artworks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 5rem;
+}
 /* モーダルウィンドウのスタイル */
 .image-modal {
     display: none; /* 初期状態で非表示 */
