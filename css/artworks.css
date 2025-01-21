@@ -50,3 +50,8 @@
 .artworks-item a:hover{
     text-decoration: underline;
 }
+@media screen and (width <= 700px){
+    :root{
+        --thumbnail-width: 150px;
+    }
+}

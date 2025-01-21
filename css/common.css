@@ -1,4 +1,4 @@
-/* リセットCSS */
+/* リセットCSS（？） */
 html{
     font-size: 16px;
     scroll-behavior: smooth;
@@ -55,6 +55,7 @@ article img{
 }
 article ul{
     padding-left: 1rem;
+    margin-bottom: 2rem;
 }
 article .tweet-widget{
     padding-top: 2rem;
@@ -321,7 +322,7 @@ footer h2{
 .sns-icon:hover {
     opacity: 0.7;
 }
-
+/* ロールアップボタン */
 .rollup img{
     padding: 0.7rem;
     border-radius: 50%;
