@@ -76,6 +76,11 @@ button {
     font-weight: 300;
     font-style: normal;
 }
+.W6{
+    font-family: urw-din, hiragino-kaku-gothic-pron, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
 /* This was made with GlassGenerator.netlify.app */ 
 .glass-container-type1{
     color: white;
@@ -104,7 +109,7 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: opacity .3s ease-in-out, transform .05s ease-in-out;
+    transition: opacity .3s ease-in-out, transform .5s ease-in-out;
     position: relative;
 }
 .button-type1:hover{
@@ -336,7 +341,7 @@ footer h2{
 }
 .rollup img:hover{
     transform: translate(0, -5px);
-    box-shadow: #4071a8 0px 5px 0px 0px;
+    box-shadow: #2e9aff 0px 5px 0px 0px;
     scale: 1.1;
 }
 .css-kanzenn-rikai{

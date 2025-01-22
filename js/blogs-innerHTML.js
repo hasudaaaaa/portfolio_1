@@ -1,5 +1,5 @@
 // 作品データを外部ファイルから読み込む
-fetch('/artworks/artworks.json')// blogs.json作って置換
+fetch('/blogs/blogs.json')
     .then(response => response.json()) // JSON形式で読み込む
     .then(artworks => {
         let galleryContainer = document.getElementById('gallery-container');
