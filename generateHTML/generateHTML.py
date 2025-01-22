@@ -26,26 +26,25 @@ def generate_html_files(template_str, artworks):
         html_content = template.substitute(artwork)  # プレースホルダに対応する値を埋め込む
 
         # ファイル名を生成 ("No-$number.html" の形式)
-        file_name = f"No-{artwork['number']}.html"  # JSONの"number"プロパティを使用してファイル名を生成
+        file_name = f"No-{artwork['number']}.html"
         file_path = os.path.join(output_dir, file_name)  # 出力先のパスを作成
 
         # HTMLファイルを書き出し
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(html_content)  # 完成したHTMLをファイルに書き込む
 
-        print(f"{file_path} を生成しました")  # 処理完了を出力
-
+        print(f"{file_path} を生成しました")
 # メイン処理
 if __name__ == "__main__":
     # テンプレートHTMLファイルのパス
-    template_file_path = "./generateHTML/artwork-template.html"  # ディレクトリ構造に合わせた相対パス
+    template_file_path = "./generateHTML/artwork-template.html"
 
     # 作品データJSONファイルのパス
-    artworks_file_path = "./generateHTML/new-artworks.json"  # ディレクトリ構造に合わせた相対パス
+    artworks_file_path = "./generateHTML/new-artworks.json"
 
     # テンプレートと作品データを読み込む
-    template_html = load_template(template_file_path)  # テンプレートHTMLを読み込む
-    artworks = load_artworks(artworks_file_path)  # JSONデータを読み込む
+    template_html = load_template(template_file_path)
+    artworks = load_artworks(artworks_file_path)
 
     # HTMLファイルを生成
     generate_html_files(template_html, artworks)
