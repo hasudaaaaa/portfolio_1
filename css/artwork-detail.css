@@ -99,7 +99,7 @@
     max-height: calc(100svh - 2rem);
     border-radius: 10px 0 10px 10px;
     background-color: #0000009a;
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.5s cubic-bezier(0.54, 0.12, 1, 1);
     object-fit: contain;
 }
 .close-btn {
