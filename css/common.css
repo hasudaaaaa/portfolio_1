@@ -62,6 +62,10 @@ article .tweet-widget{
     width: 300px;
     margin: 0 auto;
 }
+article .YT-widget{
+    display: flex;
+    justify-content: center;
+}
 
 button {
     padding: 0;
