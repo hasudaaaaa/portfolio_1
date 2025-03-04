@@ -65,6 +65,7 @@ article .tweet-widget{
 article .YT-widget{
     display: flex;
     justify-content: center;
+    max-width: calc(100vw - 2rem);
 }
 
 button {
