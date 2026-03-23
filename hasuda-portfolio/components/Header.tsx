@@ -20,12 +20,16 @@ export default function Header() {
               <li>
                 <button
                   className={styles.humburgerMenu}
-                  onClick={() => setMenuOpen(true)}
-                  aria-label="メニューを開く"
+                  onClick={() => setMenuOpen((prev) => !prev)}
+                  aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
                 >
                   <Image
-                    src="/images/icons/menu_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg"
-                    alt="hamburger-menu"
+                    src={
+                      menuOpen
+                        ? "/images/icons/close_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg"
+                        : "/images/icons/menu_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg"
+                    }
+                    alt={menuOpen ? "close-menu" : "hamburger-menu"}
                     width={24}
                     height={24}
                     className={styles.menuIcon}

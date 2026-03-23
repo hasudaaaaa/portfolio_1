@@ -28,9 +28,9 @@
   gap: 2rem;
 }
 .snsIcon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 2rem !important;
+  height: 2rem !important;
+  object-fit: contain;
   transition: all 0.3s ease;
   filter: brightness(0.1);
 }
