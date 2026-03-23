@@ -1,0 +1,55 @@
+:root {
+  --blog-thumbnail-width: 280px;
+  --blog-border-radius: 8px;
+}
+.blogsItem {
+  width: var(--blog-thumbnail-width);
+  border-radius: var(--blog-border-radius);
+  background-color: white;
+  border: solid 1px rgba(0, 0, 0, 0.089);
+  padding-bottom: 1rem;
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.blogsItem a { text-decoration: none; }
+.blogsItem a:hover { text-decoration: underline; }
+.blogsItem h3 {
+  color: rgb(41, 41, 41);
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0.5rem;
+  max-width: var(--blog-thumbnail-width);
+  height: calc(1 * 1.2 * 3rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+.thumbnailFrame {
+  width: var(--blog-thumbnail-width);
+  aspect-ratio: 16/9;
+  height: auto;
+  overflow: hidden;
+  border-radius: var(--blog-border-radius) var(--blog-border-radius) 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thumbnail {
+  object-fit: cover;
+  object-position: center center;
+  width: var(--blog-thumbnail-width) !important;
+  height: var(--blog-thumbnail-width) !important;
+  border-radius: 0;
+  transition: all 0.6s;
+}
+.thumbnail:hover { transform: scale(1.15); }
+.blogDate {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem;
+}

@@ -1,0 +1,27 @@
+.rollup {
+  position: fixed;
+  z-index: 500;
+  right: 30px;
+  bottom: 50px;
+}
+.rollup button {
+  cursor: pointer;
+}
+.rollupImg {
+  padding: 0.7rem;
+  border-radius: 50%;
+  border: 1px solid #969696;
+  color: #000000;
+  transition: all 0.3s ease;
+  display: block;
+}
+.rollupImg:hover {
+  transform: translate(0, -5px);
+  box-shadow: #2e9aff 0px 5px 0px 0px;
+  scale: 1.1;
+}
+@media screen and (max-width: 600px) {
+  .rollup {
+    display: none;
+  }
+}
