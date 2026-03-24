@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BackButton from "./BackButton";
 
 export const metadata: Metadata = {
   title: "Coming Soon - hasuda.org",
@@ -16,7 +17,7 @@ export default function ComingSoon() {
           <article>
             <p>まだなにもないよ</p>
             <div style={{ textAlign: "center", margin: "3rem 0" }}>
-              <a href="javascript:history.back()" className="button-type1">戻る</a>
+              <BackButton />
             </div>
           </article>
         </div>
