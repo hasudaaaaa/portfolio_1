@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
@@ -9,6 +9,14 @@ import styles from "./page.module.css";
 
 export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData }) {
   const [modalOpen, setModalOpen] = useState(false);
+
+  // widgets.js がすでにロード済みの場合（クライアントサイドナビゲーション時）は
+  // twttr.widgets.load() を手動で呼んで新しい blockquote を処理させる
+  useEffect(() => {
+    if (!artwork.twitterUrl) return;
+    const twttr = (window as Window & { twttr?: { widgets?: { load: () => void } } }).twttr;
+    twttr?.widgets?.load();
+  }, [artwork.twitterUrl]);
 
   return (
     <main>
@@ -51,14 +59,28 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
                     <blockquote className="twitter-tweet">
                       <a href={artwork.twitterUrl}></a>
                     </blockquote>
-                    <Script
-                      src="https://platform.twitter.com/widgets.js"
-                      strategy="lazyOnload"
-                    />
                   </div>
                 )}
               </div>
             </section>
+
+            {/* YouTube埋め込み */}
+            {artwork.youtubeUrl && (
+              <section>
+                <div className="YT-widget">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src={artwork.youtubeUrl}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </section>
+            )}
 
             <section className={styles.backToArtworks}>
               <Link href="/artworks#gallery-container">
@@ -70,6 +92,16 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
           </article>
         </div>
       </div>
+
+      {/* Twitter widgets.js — 条件外で常にロード、onLoadで初回処理 */}
+      <Script
+        src="https://platform.twitter.com/widgets.js"
+        strategy="lazyOnload"
+        onLoad={() => {
+          const twttr = (window as Window & { twttr?: { widgets?: { load: () => void } } }).twttr;
+          twttr?.widgets?.load();
+        }}
+      />
 
       {/* モーダル */}
       {modalOpen && (

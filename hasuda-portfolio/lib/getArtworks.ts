@@ -21,6 +21,7 @@ export interface ArtworkData {
   imagePath: string;
   thumbnailPath: string;
   twitterUrl?: string;
+  youtubeUrl?: string;
   contentHtml?: string;
 }
 
