@@ -18,7 +18,7 @@ export default function BlogCard({ blog }: { blog: BlogData }) {
             src={blog.thumbnailPath}
             alt={blog.title}
             width={280}
-            height={280}
+            height={157}
             className={styles.thumbnail}
           />
         </div>

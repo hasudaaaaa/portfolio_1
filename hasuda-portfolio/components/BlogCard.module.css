@@ -43,7 +43,7 @@
   object-fit: cover;
   object-position: center center;
   width: var(--blog-thumbnail-width) !important;
-  height: var(--blog-thumbnail-width) !important;
+  height: calc(var(--blog-thumbnail-width) * 9 / 16) !important;
   border-radius: 0;
   transition: all 0.6s;
 }

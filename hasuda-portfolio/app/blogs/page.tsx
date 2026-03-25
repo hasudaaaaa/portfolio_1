@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   openGraph: { url: "https://hasuda.org/blogs" },
 };
 
-export default function BlogsPage() {
-  const blogs = getAllBlogs();
+export default async function BlogsPage() {
+  const blogs = await getAllBlogs();
 
   return (
     <main>
@@ -18,7 +18,7 @@ export default function BlogsPage() {
         <div className="main-section">
           <hgroup className="page-head">
             <h1>ブログ</h1>
-            <small>BLOG</small>
+            <small>BLOGS</small>
           </hgroup>
           <article>
             <ul className={styles.blogsList}>
