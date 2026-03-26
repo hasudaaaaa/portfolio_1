@@ -1,0 +1,133 @@
+.artworkDetail {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 600px 1fr;
+  gap: 4rem;
+  height: 100%;
+}
+.mainArtwork {
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.mainArtwork img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: all 0.3s;
+}
+.mainArtwork img:hover {
+  transform: scale(1.05);
+}
+.artworkTitle {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: solid 1px #00000096;
+  margin-bottom: 2rem;
+}
+.artworkCaption h1 { font-size: 2rem; }
+
+@media screen and (width <= 1024px) {
+  .artworkDetail {
+    grid-template-columns: 600px;
+    gap: 2rem;
+  }
+}
+@media screen and (width <= 700px) {
+  .artworkDetail {
+    grid-template-columns: 100%;
+    gap: 2rem;
+  }
+}
+.backToArtworks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.backToArtworks a { text-decoration: none; }
+
+/* モーダル */
+.imageModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1200;
+  justify-content: center;
+  align-items: center;
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.imageModal::before,
+.imageModal::after {
+  content: "";
+  width: 1px;
+  height: calc(100vh + 1px);
+  display: flex;
+}
+.imageModalActive {
+  display: flex;
+}
+.modalContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  max-width: calc(100vw - 4rem);
+  max-height: calc(100svh - 2rem);
+  filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.5));
+}
+.modalContent {
+  max-width: calc(100% - 2rem) !important;
+  max-height: calc(100svh - 2rem) !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 10px 0 10px 10px;
+  background-color: #0000009a;
+  animation: fadeIn 0.5s cubic-bezier(0.54, 0.12, 1, 1);
+  object-fit: contain;
+}
+.closeBtn {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 6px 6px 0;
+  border: solid 1px #ffffff82;
+  border-left: none;
+  background-color: #0000009a;
+  transition: all 0.3s;
+}
+.closeBtn img { margin: auto 0; }
+.closeBtn:hover { background-color: #b31c49; }
+
+@media screen and (width <= 600px) {
+  .modalContainer {
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: calc(100vw - 1rem);
+  }
+  .modalContent {
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  .closeBtn {
+    border-radius: 6px 6px 0 0;
+    border-left: solid 1px #ffffff;
+    border-bottom: none;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

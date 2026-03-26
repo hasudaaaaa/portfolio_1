@@ -1,0 +1,48 @@
+:root {
+  --thumbnail-width: 180px;
+}
+.artworksItem {
+  width: var(--thumbnail-width);
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.artworksItem a {
+  text-decoration: none;
+}
+.artworksItem a:hover {
+  text-decoration: underline;
+}
+.artworksItem h3 {
+  color: rgb(41, 41, 41);
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0.2rem 0;
+  max-width: var(--thumbnail-width);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.thumbnailFrame {
+  width: var(--thumbnail-width);
+  height: var(--thumbnail-width);
+  overflow: hidden;
+  border-radius: 8px;
+}
+.thumbnail {
+  object-fit: cover;
+  object-position: center center;
+  width: var(--thumbnail-width) !important;
+  height: var(--thumbnail-width) !important;
+  border-radius: 8px;
+  transition: all 0.6s;
+}
+.thumbnail:hover {
+  transform: scale(1.15);
+}
+@media screen and (width <= 700px) {
+  :root {
+    --thumbnail-width: 150px;
+  }
+}
