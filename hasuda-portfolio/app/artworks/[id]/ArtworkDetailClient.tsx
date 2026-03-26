@@ -33,8 +33,10 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
                 <Image
                   src={artwork.imagePath}
                   alt={artwork.title}
-                  width={600}
-                  height={800}
+                  width={1200}
+                  height={1600}
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  quality={90}
                   style={{ width: "100%", height: "auto" }}
                   priority
                 />
@@ -127,6 +129,8 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
               alt={`${artwork.title} - 拡大表示`}
               width={1200}
               height={1600}
+              sizes="100vw"
+              quality={90}
               className={styles.modalContent}
               style={{ objectFit: "contain" }}
             />

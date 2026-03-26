@@ -15,6 +15,7 @@ export default function ArtworkCard({ artwork }: { artwork: ArtworkData }) {
             alt={artwork.title}
             width={180}
             height={180}
+            quality={90}
             className={styles.thumbnail}
           />
         </div>

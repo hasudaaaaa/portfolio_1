@@ -21,13 +21,13 @@ import path from 'path';
 const MAIN_MAX_PX = 2400;
 
 /** メイン画像の WebP 品質（1–100） */
-const MAIN_QUALITY = 85;
+const MAIN_QUALITY = 100;
 
-/** サムネイル（webp）の長辺ピクセル上限 */
+/** サムネイル（webp）の正方形クロップサイズ（px） */
 const THUMB_MAX_PX = 400;
 
 /** サムネイルの WebP 品質（1–100） */
-const THUMB_QUALITY = 80;
+const THUMB_QUALITY = 100;
 
 // ============================================================
 
@@ -81,9 +81,9 @@ async function processFile(filename: string): Promise<void> {
   const mainStat = fs.statSync(mainPath);
   console.log(`  ✓ main   ${humanSize(mainStat.size)}`);
 
-  // サムネイル
+  // サムネイル（正方形クロップ: CSS の object-fit: cover と同じ処理を事前に行い拡大を防ぐ）
   await sharp(srcPath)
-    .resize({ width: THUMB_MAX_PX, height: THUMB_MAX_PX, fit: 'inside', withoutEnlargement: true })
+    .resize({ width: THUMB_MAX_PX, height: THUMB_MAX_PX, fit: 'cover', position: 'centre', withoutEnlargement: true })
     .webp({ quality: THUMB_QUALITY })
     .toFile(thumbPath);
 
