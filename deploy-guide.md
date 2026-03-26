@@ -11,12 +11,12 @@
 
 ---
 
-## Step 1: ブランチを GitHub に push
+## Step 1: master を GitHub に push
 
-ターミナルで以下を実行：
+`feature/nextjs-migration` は master にマージ済み。以下を実行：
 
 ```bash
-git push origin feature/nextjs-migration
+git push origin master
 ```
 
 ---
@@ -39,7 +39,6 @@ git push origin feature/nextjs-migration
 | **Root Directory** | `hasuda-portfolio` |
 | Framework Preset | Next.js（自動検出） |
 | Build Command | `npm run build`（デフォルト） |
-| Branch | `feature/nextjs-migration` |
 
 > ⚠️ **Root Directory の `hasuda-portfolio` 設定を忘れずに。**
 > リポジトリのルートではなくサブディレクトリがNext.jsプロジェクトのため、ここが空欄だとビルドが失敗する。
@@ -74,9 +73,8 @@ git push origin feature/nextjs-migration
 
 Vercel での動作が安定したら：
 
-1. `feature/nextjs-migration` を `master` にマージ
-2. `master` から旧 HTML ファイル（`index.html`, `about.html` 等）を削除
-3. GitHub の Settings → Pages から GitHub Pages を無効化
+1. `master` から旧 HTML ファイル（`index.html`, `about.html` 等）を削除
+2. GitHub の Settings → Pages から GitHub Pages を無効化
 
 ---
 
