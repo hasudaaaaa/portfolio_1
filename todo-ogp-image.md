@@ -1,0 +1,67 @@
+# 検討事項: アートワーク詳細ページの OGP 画像動的生成
+
+作成日: 2026-03-25
+
+---
+
+## 現状
+
+- サイト全体で固定の OGP 画像（`/images/og-image.webp`）を使用
+- アートワーク詳細ページも同じ画像が使われており、SNS シェア時に作品ごとの画像が表示されない
+
+---
+
+## 方針（決定済み）
+
+**Next.js 組み込みの `next/og`（`ImageResponse`）を使い、作品画像を自動トリミングして OGP 画像を生成する。**
+
+- `app/artworks/[id]/opengraph-image.tsx` を新規作成するだけで、そのページの `og:image` が自動的に切り替わる（Next.js App Router のファイル規約）
+- sharp 等の追加ライブラリは不要
+- 縦長イラストを `object-fit: cover` + `object-position: center top` で 1200×630 にトリミング
+- 画像は `public/` からバイナリ読み込み → base64 変換するため、絶対 URL 不要（ローカル・Vercel どちらでも動作）
+- `generateStaticParams` と連携し、ビルド時に全作品分を静的生成
+
+変更対象ファイルは 3 ファイルのみ:
+
+| ファイル | 変更内容 |
+|---|---|
+| `app/artworks/[id]/opengraph-image.tsx` | 新規作成（OGP 画像生成ルート） |
+| `app/layout.tsx` | `metadataBase` を 1 行追加 |
+| `app/artworks/[id]/page.tsx` | `generateMetadata` に `twitter.images` を追記 |
+
+---
+
+## 実装前に検討すべき事項
+
+### 1. トリミング位置をどうするか
+
+デフォルトは `object-position: center top`（横中央・縦上部優先）。
+
+- イラストのキャラクターや重要な要素が中央より下にある作品では、顔や主題が切れる可能性がある
+- **選択肢 A**: デフォルト設定のまま受け入れる（シンプルだが作品によっては不自然なトリミングになる）
+- **選択肢 B**: 後から Markdown の frontmatter に `ogPosition` フィールドを追加し、作品ごとに調整できるようにする
+
+→ **実装前に、現在の作品群（7作品）で「上部優先トリミング」が許容できるか確認を推奨**
+
+### 2. imagePath と thumbnailPath どちらを使うか
+
+- `imagePath`（メイン画像）: 高解像度だが縦長。トリミングの自由度が高い
+- `thumbnailPath`（サムネイル）: すでに正方形に近い形でクロップ済みの可能性あり。ファイルサイズが小さい
+
+→ メイン画像（`imagePath`）の使用を推奨。サムネイルは独自トリミング済みのため、OGP 用に再利用するとズレが生じる可能性がある
+
+### 3. デプロイ後の検証手段を用意できるか
+
+OGP 画像が正しく表示されるかは、SNS のデバッガーツールでしか確認できない（SNS がキャッシュするため）。
+
+- Twitter Card Validator: `https://cards-dev.twitter.com/validator`
+- OGP 確認ツール: `https://ogp.biz/` など
+
+→ **Vercel デプロイ後にまず `/artworks/No-089/opengraph-image` へ直接アクセスして画像が表示されるかを確認し、その後 SNS デバッガーで検証する**
+
+---
+
+## 実装タイミング
+
+Vercel デプロイ（Phase 8）完了後、または本番 URL が確定してから実装・検証するのが効率的。
+ローカルでの `npm run build && npm run start` でも事前確認は可能。
