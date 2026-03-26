@@ -1,0 +1,155 @@
+# 新しい作品をサイトに掲載する手順
+
+## 概要
+
+作品を追加するには以下の3つの作業が必要です。
+
+1. 元画像を `public/images/originals/` に置く
+2. スクリプトで縮小・サムネイル生成を行う
+3. マークダウンファイルを `content/artworks/` に作成する
+4. `master` にPushする
+
+---
+
+## ステップ 1: 元画像を配置する
+
+`public/images/originals/` に元画像（高解像度ファイル）を置く。
+
+### ファイル名の規則
+
+```
+{作品番号}-{画像連番}.{拡張子}
+```
+
+| 例 | 意味 |
+|---|---|
+| `156-1.jpg` | No-156 の1枚目 |
+| `156-2.png` | No-156 の2枚目 |
+
+- 拡張子は `.jpg` / `.jpeg` / `.png` / `.webp` が使える
+- 作品番号は既存ファイルと重複しないこと
+- 複数枚ある場合は `156-1.jpg`, `156-2.jpg` のように連番にする
+
+---
+
+## ステップ 2: スクリプトで画像を生成する
+⚠️ **作業ディレクトリを確認。package.jsonがあるディレクトリ（hasuda-portfolio/）**
+
+### 事前確認（dry-run）
+
+実際のファイルは作成せず、対象ファイルと出力先だけを表示する。
+
+```bash
+npm run compress -- --dry-run
+```
+
+出力例:
+```
+対象ファイル: 1 件  [dry-run]
+設定: メイン 2400px / Q100  サムネイル 400px / Q100
+
+[156-1.jpg]  4000x3000  (8.2 MB)
+  → public/images/artworks/No-156/156-1s.webp
+  → public/images/artworks/No-156/156-1s-thumb.webp
+```
+
+問題なければ本実行する。
+
+### 本実行
+
+```bash
+npm run compress
+```
+
+`public/images/artworks/No-156/` が自動的に作成され、以下が生成される。
+
+| 生成ファイル | 内容 |
+|---|---|
+| `156-1s.webp` | 本体画像（長辺 2400px 以内に縮小） |
+| `156-1s-thumb.webp` | サムネイル（400×400px 正方形クロップ） |
+
+> **注意**: `originals/` 内のすべての画像がまとめて処理される。
+> 追加分だけ処理したい場合は、他のファイルを一時的に別の場所に移しておく。
+
+---
+
+## ステップ 3: マークダウンファイルを作成する
+
+`content/artworks/No-156.md` を作成する。
+
+### テンプレート
+
+```markdown
+---
+number: "156"
+title: "作品タイトル"
+date: "2026/03/26"
+imagePath: "/images/artworks/No-156/156-1s.webp"
+thumbnailPath: "/images/artworks/No-156/156-1s-thumb.webp"
+---
+
+作品の説明文（任意）。
+```
+
+### フロントマター フィールド一覧
+
+| フィールド | 必須 | 説明 |
+|---|---|---|
+| `number` | 必須 | 3桁のゼロ埋め文字列（例: `"156"`） |
+| `title` | 必須 | 作品タイトル |
+| `date` | 必須 | 制作日（例: `"2026/03/26"` または `"2026年3月26日"`） |
+| `imagePath` | 必須 | 本体画像のパス（スクリプトが生成した `*s.webp`） |
+| `thumbnailPath` | 必須 | サムネイルのパス（スクリプトが生成した `*s-thumb.webp`） |
+| `twitterUrl` | 任意 | 関連ツイートのURL |
+| `youtubeUrl` | 任意 | YouTube埋め込みURL（`https://www.youtube.com/embed/...` 形式） |
+
+フロントマター以下の本文は省略可。Markdown記法が使える。
+
+---
+
+## ステップ 4: 動作確認
+
+```bash
+npm run dev
+```
+
+- `/artworks` に新しい作品カードが表示されること
+- `/artworks/No-156` の詳細ページが表示されること
+- サムネイル・本体画像が正しく表示されること
+
+---
+
+## ファイル構成まとめ（例: No-156）
+
+```
+hasuda-portfolio/
+├── content/
+│   └── artworks/
+│       └── No-156.md                     ← 今回作成
+└── public/
+    └── images/
+        ├── originals/
+        │   └── 156-1.jpg                 ← 元画像を置く
+        └── artworks/
+            └── No-156/                   ← スクリプトが自動生成
+                ├── 156-1s.webp
+                └── 156-1s-thumb.webp
+```
+
+---
+
+## 任意フィールドの記法
+
+### Twitter（X）を埋め込む
+
+```yaml
+twitterUrl: "https://twitter.com/username/status/1234567890"
+```
+
+### YouTube を埋め込む
+
+YouTube の「共有 → 埋め込み」で取得した `src` の値を貼る。
+
+```yaml
+youtubeUrl: "https://www.youtube.com/embed/VIDEO_ID?si=XXXXX"
+```
