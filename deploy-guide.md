@@ -70,7 +70,7 @@ git push origin feature/nextjs-migration
 
 ---
 
-## Step 5: 移行完了後の後片付け（任意）
+## Step 5: 移行完了後の後片付け
 
 Vercel での動作が安定したら：
 
