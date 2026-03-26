@@ -1,3 +1,4 @@
+// OGP画像のURLを定数として定義
 export const OG_IMAGE_URL = "https://hasuda.org/images/og-image151.jpg";
 
 export const defaultOpenGraph = {

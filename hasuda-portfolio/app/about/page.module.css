@@ -16,7 +16,7 @@
   width: min(400px, 30vw);
   height: auto;
   position: relative;
-  min-height: 200px;
+  min-width: 200px;
 }
 .brightness0 { filter: brightness(0.1); }
 .snsLinks {
@@ -34,8 +34,12 @@
   transition: all 0.3s ease;
   filter: brightness(0.1);
 }
+.snsIcon:hover {
+  filter: brightness(0.5);
+}
 @media (prefers-color-scheme: dark) {
   .snsIcon { filter: brightness(1); }
+  .snsIcon:hover { filter: brightness(0.5); }
 }
 .resume { flex: 1; }
 .buttonRow {
