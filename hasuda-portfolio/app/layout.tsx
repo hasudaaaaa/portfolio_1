@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: "hasuda's portfolio site",
     siteName: "hasuda.org",
     type: "website",
-    images: [{ url: "https://hasuda.org/images/og-image.webp" }],
+    images: [{ url: "https://hasuda.org/images/og-image151.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "hasuda's portfolio site",
     site: "@hasudaaaaaaa",
     creator: "@hasudaaaaaaa",
-    images: ["https://hasuda.org/images/og-image.webp"],
+    images: ["https://hasuda.org/images/og-image151.jpg"],
   },
 };
 
