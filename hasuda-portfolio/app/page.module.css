@@ -21,7 +21,7 @@
 .keyvisualFrontObj img,
 .keyvisualEffect2 img {
   object-fit: cover;
-  object-position: 50% 40%;
+  object-position: 55% 40%; /* キービジュアル位置調整 */
 }
 
 @keyframes shake {
@@ -72,8 +72,8 @@
 .profileCard {
   position: absolute;
   z-index: 10;
-  top: 60lvh;
-  left: 40%;
+  top: 70lvh; /* プロフィールカードの位置調整（上下） */
+  left: 10%; /* プロフィールカードの位置調整（左右） */
   width: 400px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 2px 3px 6px 5px;

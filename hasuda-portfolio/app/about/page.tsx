@@ -22,7 +22,7 @@ export default function About() {
             <section className={styles.bio}>
               <div>
                 <div className={styles.profileAvater}>
-                  <Image src="/images/index/089-1-trimed2.webp" alt="プロフィール画像" fill />
+                  <Image src="/images/index/151-2icon.jpg" alt="プロフィール画像" fill />
                 </div>
               </div>
               <div className={styles.resume}>

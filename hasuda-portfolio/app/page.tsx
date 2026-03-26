@@ -13,8 +13,8 @@ export default function Home() {
     <main>
       <div className={styles.keyvisual}>
         <div className={styles.keyvisualBG}>
-          <Image src="/images/index/keyvisual_bg.webp" alt="keyvisual Illustration" fill priority />
-        </div>
+          <Image src="/images/artworks/No-155/155-1s.webp" alt="keyvisual Illustration" fill priority quality={100}/>
+        </div> {/*  
         <div className={styles.keyvisualCharacter}>
           <Image src="/images/index/keyvisual_character2.webp" alt="keyvisual Illustration" fill />
         </div>
@@ -26,16 +26,16 @@ export default function Home() {
         </div>
         <div className={styles.keyvisualEffect2}>
           <Image src="/images/index/keyvisual_effect2.webp" alt="keyvisual Illustration" fill />
-        </div>
-      </div>
+        </div>*/}
+      </div>{/* 
       <h1 className={styles.pageTitle}>
         HASUDA&apos;s<br />PORTFOLIO
-      </h1>
+      </h1>*/}
       <div className={`${styles.profileCard} glass-container-type2`}>
         <div className={styles.profileContents}>
           <div className={styles.profileRow1}>
             <div className={styles.profileAvater}>
-              <Image src="/images/index/089-1-trimed2.webp" alt="profile avatar" fill />
+              <Image src="/images/index/151-2icon.jpg" alt="profile avatar" fill />
             </div>
             <div>
               <h1 className={styles.profileDisplayName}>蓮田</h1>
