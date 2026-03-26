@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
+import { defaultOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "プロフィール - hasuda.org",
   alternates: { canonical: "https://hasuda.org/about" },
-  openGraph: { url: "https://hasuda.org/about" },
+  openGraph: { ...defaultOpenGraph, url: "https://hasuda.org/about" },
 };
 
 export default function About() {

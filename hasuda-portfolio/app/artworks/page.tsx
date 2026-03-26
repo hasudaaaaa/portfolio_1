@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { getAllArtworks } from "@/lib/getArtworks";
 import ArtworkCard from "@/components/ArtworkCard";
 import styles from "./page.module.css";
+import { defaultOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Artworks - hasuda.org",
   alternates: { canonical: "https://hasuda.org/artworks" },
-  openGraph: { url: "https://hasuda.org/artworks" },
+  openGraph: { ...defaultOpenGraph, url: "https://hasuda.org/artworks" },
 };
 
 export default function ArtworksPage() {

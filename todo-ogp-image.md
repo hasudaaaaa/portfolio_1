@@ -6,8 +6,12 @@
 
 ## 現状
 
-- サイト全体で固定の OGP 画像（`/images/og-image.webp`）を使用
-- アートワーク詳細ページも同じ画像が使われており、SNS シェア時に作品ごとの画像が表示されない
+- ~~サイト全体で固定の OGP 画像（`/images/og-image.webp`）を使用~~
+- **2026-03-26 対応済み**: 各ページが `openGraph` を上書きして `images` を消していた問題を修正
+  - `lib/metadata.ts` を新規作成し、`OG_IMAGE_URL` と `defaultOpenGraph` を一元管理
+  - 全 `page.tsx` で `defaultOpenGraph` をスプレッドするよう更新
+  - OGP 画像の変更は `lib/metadata.ts` の `OG_IMAGE_URL` 1行だけで全ページに反映される
+- アートワーク詳細ページは引き続き固定画像。SNS シェア時に作品ごとの画像が表示されない（未対応）
 
 ---
 
@@ -21,13 +25,16 @@
 - 画像は `public/` からバイナリ読み込み → base64 変換するため、絶対 URL 不要（ローカル・Vercel どちらでも動作）
 - `generateStaticParams` と連携し、ビルド時に全作品分を静的生成
 
-変更対象ファイルは 3 ファイルのみ:
+残り変更対象ファイル:
 
-| ファイル | 変更内容 |
-|---|---|
-| `app/artworks/[id]/opengraph-image.tsx` | 新規作成（OGP 画像生成ルート） |
-| `app/layout.tsx` | `metadataBase` を 1 行追加 |
-| `app/artworks/[id]/page.tsx` | `generateMetadata` に `twitter.images` を追記 |
+| ファイル | 変更内容 | 状態 |
+|---|---|---|
+| `lib/metadata.ts` | 新規作成（`OG_IMAGE_URL` / `defaultOpenGraph` の一元管理） | ✅ 完了 |
+| `app/layout.tsx` | `defaultOpenGraph` / `OG_IMAGE_URL` をインポートして使用 | ✅ 完了 |
+| `app/**/page.tsx` | 全ページで `defaultOpenGraph` をスプレッド | ✅ 完了 |
+| `app/layout.tsx` | `metadataBase` を追加 | 未対応 |
+| `app/artworks/[id]/opengraph-image.tsx` | 新規作成（OGP 画像生成ルート） | 未対応 |
+| `app/artworks/[id]/page.tsx` | `generateMetadata` に `twitter.images` を追記 | 未対応 |
 
 ---
 

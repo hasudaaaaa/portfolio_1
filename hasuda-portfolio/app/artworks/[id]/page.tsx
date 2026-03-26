@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getArtwork, getAllArtworkIds } from "@/lib/getArtworks";
 import ArtworkDetailClient from "./ArtworkDetailClient";
+import { defaultOpenGraph } from "@/lib/metadata";
 
 export async function generateStaticParams() {
   return getAllArtworkIds().map((id) => ({ id }));
@@ -15,7 +16,7 @@ export async function generateMetadata({
   const artwork = await getArtwork(id);
   return {
     title: `${artwork.title} - hasuda.org`,
-    openGraph: { url: `https://hasuda.org/artworks/${id}` },
+    openGraph: { ...defaultOpenGraph, url: `https://hasuda.org/artworks/${id}` },
     alternates: { canonical: `https://hasuda.org/artworks/${id}` },
   };
 }

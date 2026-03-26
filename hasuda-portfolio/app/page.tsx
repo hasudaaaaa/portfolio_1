@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
+import { defaultOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://hasuda.org" },
-  openGraph: { url: "https://hasuda.org" },
+  openGraph: { ...defaultOpenGraph, url: "https://hasuda.org" },
 };
 
 export default function Home() {

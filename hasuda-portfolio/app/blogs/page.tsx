@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { getAllBlogs } from "@/lib/getBlogs";
 import BlogCard from "@/components/BlogCard";
 import styles from "./page.module.css";
+import { defaultOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "ブログ - hasuda.org",
   alternates: { canonical: "https://hasuda.org/blogs" },
-  openGraph: { url: "https://hasuda.org/blogs" },
+  openGraph: { ...defaultOpenGraph, url: "https://hasuda.org/blogs" },
 };
 
 export default async function BlogsPage() {

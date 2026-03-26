@@ -3,17 +3,16 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { OG_IMAGE_URL, defaultOpenGraph } from "@/lib/metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "hasuda.org",
   description: "hasuda's portfolio site",
   openGraph: {
+    ...defaultOpenGraph,
     title: "hasuda.org",
     description: "hasuda's portfolio site",
-    siteName: "hasuda.org",
-    type: "website",
-    images: [{ url: "https://hasuda.org/images/og-image151.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     description: "hasuda's portfolio site",
     site: "@hasudaaaaaaa",
     creator: "@hasudaaaaaaa",
-    images: ["https://hasuda.org/images/og-image151.jpg"],
+    images: [OG_IMAGE_URL],
   },
 };
 
