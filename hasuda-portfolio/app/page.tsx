@@ -14,7 +14,7 @@ export default function Home() {
     <main>
       <div className={styles.keyvisual}>
         <div className={styles.keyvisualBG}>
-          <Image src="/images/artworks/No-155/155-1s.webp" alt="keyvisual Illustration" fill priority quality={100}/>
+          <Image src="/images/index/155-1-kv.jpg" alt="keyvisual Illustration" fill priority quality={100}/>
         </div> {/*  
         <div className={styles.keyvisualCharacter}>
           <Image src="/images/index/keyvisual_character2.webp" alt="keyvisual Illustration" fill />
