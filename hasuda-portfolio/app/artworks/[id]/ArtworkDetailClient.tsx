@@ -10,13 +10,15 @@ import styles from "./page.module.css";
 export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData }) {
   const [modalOpen, setModalOpen] = useState(false);
 
+  const hasTwitter = artwork.sections?.some((s) => s.includes("twitter-tweet")) ?? false;
+
   // widgets.js がすでにロード済みの場合（クライアントサイドナビゲーション時）は
   // twttr.widgets.load() を手動で呼んで新しい blockquote を処理させる
   useEffect(() => {
-    if (!artwork.twitterUrl) return;
+    if (!hasTwitter) return;
     const twttr = (window as Window & { twttr?: { widgets?: { load: () => void } } }).twttr;
     twttr?.widgets?.load();
-  }, [artwork.twitterUrl]);
+  }, [hasTwitter, artwork.sections]);
 
   return (
     <main>
@@ -36,7 +38,7 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
                   width={1200}
                   height={1600}
                   sizes="(max-width: 768px) 100vw, 600px"
-                  quality={90}
+                  quality={100}
                   style={{ width: "100%", height: "auto" }}
                   priority
                 />
@@ -52,37 +54,15 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
                 <small>Comment :</small>
                 <div
                   className="W3"
-                  dangerouslySetInnerHTML={{ __html: artwork.contentHtml ?? "" }}
+                  dangerouslySetInnerHTML={{ __html: artwork.sections?.[0] ?? "" }}
                 />
-
-                {/* Twitter埋め込み */}
-                {artwork.twitterUrl && (
-                  <div className="tweet-widget">
-                    <blockquote className="twitter-tweet">
-                      <a href={artwork.twitterUrl}></a>
-                    </blockquote>
-                  </div>
-                )}
               </div>
             </section>
 
-            {/* YouTube埋め込み */}
-            {artwork.youtubeUrl && (
-              <section>
-                <div className="YT-widget">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src={artwork.youtubeUrl}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </div>
-              </section>
-            )}
+            {/* 追加セクション */}
+            {artwork.sections?.slice(1).map((sectionHtml, i) => (
+              <section className="W3" key={i} dangerouslySetInnerHTML={{ __html: sectionHtml }} />
+            ))}
 
             <section className={styles.backToArtworks}>
               <Link href="/artworks#gallery-container">
@@ -130,7 +110,7 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
               width={1200}
               height={1600}
               sizes="100vw"
-              quality={90}
+              unoptimized
               className={styles.modalContent}
               style={{ objectFit: "contain" }}
             />
