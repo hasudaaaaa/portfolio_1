@@ -24,6 +24,7 @@ export default function BlogCard({ blog }: { blog: BlogData }) {
         </div>
         <h3>{blog.title}</h3>
         <div className={`${styles.blogDate} W3`}>
+          <small className={`${styles.blogURL} W3`}>{isExternal ? blog.pageURL : ""}</small>
           <small>{isComingSoon ? "" : blog.date}</small>
         </div>
       </a>

@@ -79,6 +79,7 @@
   box-shadow: rgba(0, 0, 0, 0.1) 2px 3px 6px 5px;
   border-bottom: 2px rgba(40,40,40,0.35) solid;
   border-right: 2px rgba(40,40,40,0.35) solid;
+  transition: transform 0.5s ease-out;
 }
 @media screen and (700px >= width) {
   .profileCard {
@@ -87,6 +88,9 @@
     left: 1rem;
     width: 90vw;
   }
+}
+.profileCard:hover{
+  transform: translateY(-10px);
 }
 .profileContents {
   padding: 1rem;
