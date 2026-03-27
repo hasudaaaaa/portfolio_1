@@ -16,7 +16,7 @@ export async function generateMetadata({
   const artwork = await getArtwork(id);
   return {
     title: `${artwork.title} - hasuda.org`,
-    openGraph: { ...defaultOpenGraph, images: undefined, url: `https://hasuda.org/artworks/${id}` },
+    openGraph: { siteName: defaultOpenGraph.siteName, type: defaultOpenGraph.type, url: `https://hasuda.org/artworks/${id}` },
     twitter: {
       card: "summary_large_image",
       images: [`/artworks/${id}/opengraph-image`],
