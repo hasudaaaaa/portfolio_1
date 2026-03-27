@@ -33,6 +33,7 @@ const THUMB_QUALITY = 100;
 
 const ORIGINALS_DIR = path.join(process.cwd(), 'public/images/originals');
 const ARTWORKS_DIR = path.join(process.cwd(), 'public/images/artworks');
+const CONTENT_DIR = path.join(process.cwd(), 'content/artworks');
 
 const isDryRun = process.argv.includes('--dry-run');
 
@@ -65,8 +66,10 @@ async function processFile(filename: string): Promise<void> {
   const srcStat = fs.statSync(srcPath);
   const meta = await sharp(srcPath).metadata();
   console.log(`\n[${filename}]  ${meta.width}x${meta.height}  (${humanSize(srcStat.size)})`);
+  const mdPath = path.join(CONTENT_DIR, `No-${no}.md`);
   console.log(`  → ${path.relative(process.cwd(), mainPath)}`);
   console.log(`  → ${path.relative(process.cwd(), thumbPath)}`);
+  console.log(`  → ${path.relative(process.cwd(), mdPath)}${fs.existsSync(mdPath) ? '  (既存: スキップ)' : '  (新規生成)'}`);
 
   if (isDryRun) return;
 
@@ -89,6 +92,33 @@ async function processFile(filename: string): Promise<void> {
 
   const thumbStat = fs.statSync(thumbPath);
   console.log(`  ✓ thumb  ${humanSize(thumbStat.size)}`);
+
+  generateMdFile(no, imgNo);
+}
+
+/** content/artworks/No-XXX.md が存在しない場合のみ frontmatter 入り雛形を生成する */
+function generateMdFile(no: string, imgNo: string): void {
+  const mdPath = path.join(CONTENT_DIR, `No-${no}.md`);
+  if (fs.existsSync(mdPath)) {
+    console.log(`  – md    既存のため生成スキップ (${path.relative(process.cwd(), mdPath)})`);
+    return;
+  }
+
+  const imagePath = `/images/artworks/No-${no}/${no}-${imgNo}s.webp`;
+  const thumbnailPath = `/images/artworks/No-${no}/${no}-${imgNo}s-thumb.webp`;
+  const content = [
+    '---',
+    `number: "${no}"`,
+    'title: ""',
+    'date: ""',
+    `imagePath: "${imagePath}"`,
+    `thumbnailPath: "${thumbnailPath}"`,
+    '---',
+    '',
+  ].join('\n');
+
+  fs.writeFileSync(mdPath, content, 'utf-8');
+  console.log(`  ✓ md    生成 (${path.relative(process.cwd(), mdPath)})`);
 }
 
 async function main(): Promise<void> {
