@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//e/Documents/Adobe/psd_files/103-portfolio/practice_1/hasuda-portfolio/content/artworks/**)",
+      "Bash(done)"
     ]
   }
 }

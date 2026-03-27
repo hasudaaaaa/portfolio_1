@@ -32,9 +32,9 @@
 | `lib/metadata.ts` | 新規作成（`OG_IMAGE_URL` / `defaultOpenGraph` の一元管理） | ✅ 完了 |
 | `app/layout.tsx` | `defaultOpenGraph` / `OG_IMAGE_URL` をインポートして使用 | ✅ 完了 |
 | `app/**/page.tsx` | 全ページで `defaultOpenGraph` をスプレッド | ✅ 完了 |
-| `app/layout.tsx` | `metadataBase` を追加 | 未対応 |
-| `app/artworks/[id]/opengraph-image.tsx` | 新規作成（OGP 画像生成ルート） | 未対応 |
-| `app/artworks/[id]/page.tsx` | `generateMetadata` に `twitter.images` を追記 | 未対応 |
+| `app/layout.tsx` | `metadataBase` を追加 | ✅ 完了 |
+| `app/artworks/[id]/opengraph-image.tsx` | 新規作成（OGP 画像生成ルート） | ✅ 完了 |
+| `app/artworks/[id]/page.tsx` | `generateMetadata` に `twitter.images` を追記 | ✅ 完了 |
 
 ---
 
@@ -48,23 +48,14 @@
 - **選択肢 A**: デフォルト設定のまま受け入れる（シンプルだが作品によっては不自然なトリミングになる）
 - **選択肢 B**: 後から Markdown の frontmatter に `ogPosition` フィールドを追加し、作品ごとに調整できるようにする
 
-→ **実装前に、現在の作品群（7作品）で「上部優先トリミング」が許容できるか確認を推奨**
+→ **一旦選択肢Aで実装。問題があれば修正する。**
 
 ### 2. imagePath と thumbnailPath どちらを使うか
 
 - `imagePath`（メイン画像）: 高解像度だが縦長。トリミングの自由度が高い
 - `thumbnailPath`（サムネイル）: すでに正方形に近い形でクロップ済みの可能性あり。ファイルサイズが小さい
 
-→ メイン画像（`imagePath`）の使用を推奨。サムネイルは独自トリミング済みのため、OGP 用に再利用するとズレが生じる可能性がある
-
-### 3. デプロイ後の検証手段を用意できるか
-
-OGP 画像が正しく表示されるかは、SNS のデバッガーツールでしか確認できない（SNS がキャッシュするため）。
-
-- Twitter Card Validator: `https://cards-dev.twitter.com/validator`
-- OGP 確認ツール: `https://ogp.biz/` など
-
-→ **Vercel デプロイ後にまず `/artworks/No-089/opengraph-image` へ直接アクセスして画像が表示されるかを確認し、その後 SNS デバッガーで検証する**
+→ メイン画像（`imagePath`）
 
 ---
 

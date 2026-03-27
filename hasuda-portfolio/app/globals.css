@@ -78,10 +78,13 @@ button {
   font-weight: 300;
   font-style: normal;
 }
-.W6 {
+.W6, strong {
   font-family: urw-din, hiragino-kaku-gothic-pron, sans-serif;
   font-weight: 600;
   font-style: normal;
+}
+i {
+  font-style: italic;
 }
 /* Glass containers */
 .glass-container-type1 {

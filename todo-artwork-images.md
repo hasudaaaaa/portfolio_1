@@ -14,3 +14,5 @@ images/
             ├──094-1s.jpg
 
 ```
+
+あと、 `hasuda-portfolio\scripts\compress-images.ts` でオリジナルの画像を縮小するのと同時にfrontmatter設定済み（`number`, `imagePath`, `thumbnailPath`みたいな自明なところだけ）のmdファイルも生成できたら良いなって
