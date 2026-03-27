@@ -7,6 +7,7 @@ import { OG_IMAGE_URL, defaultOpenGraph } from "@/lib/metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hasuda.org"),
   title: "hasuda.org",
   description: "hasuda's portfolio site",
   openGraph: {

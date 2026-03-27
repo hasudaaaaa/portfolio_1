@@ -17,6 +17,10 @@ export async function generateMetadata({
   return {
     title: `${artwork.title} - hasuda.org`,
     openGraph: { ...defaultOpenGraph, url: `https://hasuda.org/artworks/${id}` },
+    twitter: {
+      card: "summary_large_image",
+      images: [`/artworks/${id}/opengraph-image`],
+    },
     alternates: { canonical: `https://hasuda.org/artworks/${id}` },
   };
 }
