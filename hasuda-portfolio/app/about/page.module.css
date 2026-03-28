@@ -45,6 +45,7 @@
 .buttonRow {
   display: flex;
   justify-content: flex-end;
+  gap: 1rem;
 }
 .buttonRow a { text-decoration: none; }
 .making {

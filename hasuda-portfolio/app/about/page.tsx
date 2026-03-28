@@ -60,7 +60,12 @@ export default function About() {
                 <div className={styles.buttonRow}>
                   <Link href="/artworks">
                     <div className="button-type1 glass-container-type2">
-                      <div>作品一覧へ</div>
+                      <div>作品を見る</div>
+                    </div>
+                  </Link>
+                  <Link href="/blogs">
+                    <div className="button-type1 glass-container-type2">
+                      <div>ブログを見る</div>
                     </div>
                   </Link>
                 </div>
