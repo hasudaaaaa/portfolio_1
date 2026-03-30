@@ -13,6 +13,11 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
 
   const handleCopyLink = async () => {
     await navigator.clipboard.writeText(window.location.href);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).gtag?.("event", "copy_link", {
+      artwork_id: artwork.id,
+      artwork_title: artwork.title,
+    });
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
