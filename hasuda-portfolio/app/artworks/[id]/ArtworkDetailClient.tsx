@@ -9,6 +9,13 @@ import styles from "./page.module.css";
 
 export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData }) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = async () => {
+    await navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const hasTwitter = artwork.sections?.some((s) => s.includes("twitter-tweet")) ?? false;
 
@@ -51,6 +58,14 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
                   <h1>{artwork.title}</h1>
                   <small>{artwork.date}</small>
                 </hgroup>
+                <div className={styles.ShareButtons}>
+                  <button
+                    className={`glass-container-type2 ${styles.CopyLinkButton} ${copied ? styles.CopyLinkButtonCopied : ""}`}
+                    onClick={handleCopyLink}
+                  >
+                    {copied ? "Copied!!" : "Copy Link"}
+                  </button>
+                </div>
                 <small>Comment :</small>
                 <div
                   className="W3"
