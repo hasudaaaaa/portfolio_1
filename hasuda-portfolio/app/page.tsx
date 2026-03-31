@@ -47,13 +47,13 @@ export default function Home() {
             <p>University student <span className="W3">/</span> Illustration, 3DCG</p>
             <div className={styles.profileLinks}>
               <Link href="/artworks">
-                <div className="button-type1 glass-container-type2">
-                  <span>作品一覧</span>
+                <div className="button-type1">
+                  作品一覧
                 </div>
               </Link>
               <Link href="/about">
-                <div className="button-type1 glass-container-type2">
-                  <span>プロフィール</span>
+                <div className="button-type1">
+                  プロフィール
                 </div>
               </Link>
             </div>

@@ -82,7 +82,7 @@
   transition: transform 0.5s ease-out;
   overflow: hidden;
 }
-@media screen and (700px >= width) {
+@media screen and (500px >= width) {
   .profileCard {
     bottom: 1rem;
     top: auto;

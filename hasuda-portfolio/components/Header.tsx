@@ -17,6 +17,9 @@ export default function Header() {
           </div>
           <nav>
             <ul className={styles.navMenu}>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/artworks">Artworks</Link></li>
+              <li><Link href="/blogs">Blogs</Link></li>
               <li>
                 <button
                   className={styles.humburgerMenu}
@@ -47,7 +50,7 @@ export default function Header() {
       >
         <Link href="/about" onClick={() => setMenuOpen(false)}>
           <div>プロフィール</div>
-          <small className="W3">Profile</small>
+          <small className="W3">About</small>
         </Link>
         <Link href="/artworks" onClick={() => setMenuOpen(false)}>
           <div>作品一覧</div>
@@ -55,7 +58,7 @@ export default function Header() {
         </Link>
         <Link href="/blogs" onClick={() => setMenuOpen(false)}>
           <div>ブログ</div>
-          <small className="W3">Blog</small>
+          <small className="W3">Blogs</small>
         </Link>
       </div>
 

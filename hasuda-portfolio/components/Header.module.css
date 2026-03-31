@@ -4,7 +4,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  color: #000000;
   padding: 0.5rem 0;
   z-index: 1100;
   background-color: transparent;
@@ -18,7 +17,6 @@
   padding: 0 min(5vw, 20px) 0 20px;
 }
 .headerContent a {
-  color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -30,9 +28,17 @@
   padding: 0;
   margin: 0;
   display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.2rem;
 }
-.navMenu li {
-  margin-left: 20px;
+.navMenu li{
+  padding-left: 1rem;
+  border-left: solid 1px #00000033;
+}
+.navMenu li:hover{
+  text-decoration: underline;
 }
 .humburgerMenu {
   padding: 0.2rem 0.2rem 0 0.2rem;
@@ -41,6 +47,7 @@
   border-radius: 7px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: none;
 }
 .menuIcon {
   width: 1.5rem;
@@ -53,7 +60,14 @@
     filter: brightness(1);
   }
 }
-
+@media screen and (500px >= width) {
+  .navMenu li a{
+    display: none;
+  }
+  .humburgerMenu {
+    display: block;
+  }
+}
 /* スライドインメニュー */
 .menuOverlay {
   position: fixed;
