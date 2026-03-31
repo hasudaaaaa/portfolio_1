@@ -28,7 +28,7 @@ export default function About() {
               </div>
               <div className={styles.resume}>
                 <h2>蓮田</h2>
-                <small>@hasuda.org</small>
+                <small>mail : contact@hasuda.org</small>
                 <ul className={`${styles.snsLinks} brightness-0`}>
                   <li>
                     <a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
@@ -60,12 +60,12 @@ export default function About() {
                 <div className={styles.buttonRow}>
                   <Link href="/artworks">
                     <div className="button-type1 glass-container-type2">
-                      <div>作品を見る</div>
+                      作品を見る
                     </div>
                   </Link>
                   <Link href="/blogs">
                     <div className="button-type1 glass-container-type2">
-                      <div>ブログを見る</div>
+                      ブログを見る
                     </div>
                   </Link>
                 </div>

@@ -7,20 +7,32 @@ import Script from "next/script";
 import type { ArtworkData } from "@/lib/getArtworks";
 import styles from "./page.module.css";
 
-export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData }) {
-  const [modalOpen, setModalOpen] = useState(false);
+function CopyLinkButton({ artworkId, artworkTitle }: { artworkId: string; artworkTitle: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = async () => {
     await navigator.clipboard.writeText(window.location.href);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).gtag?.("event", "copy_link", {
-      artwork_id: artwork.id,
-      artwork_title: artwork.title,
+      artwork_id: artworkId,
+      artwork_title: artworkTitle,
     });
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  return (
+    <button
+      className={`glass-container-type2 ${styles.CopyLinkButton} ${copied ? styles.CopyLinkButtonCopied : ""}`}
+      onClick={handleCopyLink}
+    >
+      {copied ? "Copied!!" : "Copy Link"}
+    </button>
+  );
+}
+
+export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData }) {
+  const [modalOpen, setModalOpen] = useState(false);
 
   const hasTwitter = artwork.sections?.some((s) => s.includes("twitter-tweet")) ?? false;
 
@@ -64,12 +76,7 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
                   <small>{artwork.date}</small>
                 </hgroup>
                 <div className={styles.ShareButtons}>
-                  <button
-                    className={`glass-container-type2 ${styles.CopyLinkButton} ${copied ? styles.CopyLinkButtonCopied : ""}`}
-                    onClick={handleCopyLink}
-                  >
-                    {copied ? "Copied!!" : "Copy Link"}
-                  </button>
+                  <CopyLinkButton artworkId={artwork.id} artworkTitle={artwork.title} />
                 </div>
                 <small>Comment :</small>
                 <div
