@@ -9,16 +9,16 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://hasuda.org"),
   title: "hasuda.org",
-  description: "hasuda's portfolio site",
+  description: "hasuda's Non-portfolio site",
   openGraph: {
     ...defaultOpenGraph,
     title: "hasuda.org",
-    description: "hasuda's portfolio site",
+    description: "hasuda's Non-portfolio site",
   },
   twitter: {
     card: "summary_large_image",
     title: "hasuda.org",
-    description: "hasuda's portfolio site",
+    description: "hasuda's Non-portfolio site",
     site: "@hasudaaaaaaa",
     creator: "@hasudaaaaaaa",
     images: [OG_IMAGE_URL],
