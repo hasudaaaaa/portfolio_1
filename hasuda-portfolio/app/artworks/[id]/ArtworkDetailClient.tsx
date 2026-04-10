@@ -88,7 +88,7 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
 
             {/* 追加セクション */}
             {artwork.sections?.slice(1).map((sectionHtml, i) => (
-              <section className="W3" key={i} dangerouslySetInnerHTML={{ __html: sectionHtml }} />
+              <section className={`W3 ${styles.additionalSection}`} key={i} dangerouslySetInnerHTML={{ __html: sectionHtml }} />
             ))}
 
             <section className={styles.backToArtworks}>

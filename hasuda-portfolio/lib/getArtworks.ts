@@ -62,7 +62,13 @@ export async function getArtwork(id: string): Promise<ArtworkData> {
   const { data, content } = matter(raw);
   const sectionTexts = content.split(/\r?\n---\r?\n/);
   const sections = await Promise.all(
-    sectionTexts.map(async (s) => (await processor.process(s)).toString())
+    sectionTexts.map(async (s) => {
+      const html = (await processor.process(s)).toString();
+      return html.replace(
+        /<a href="(https?:\/\/[^"]+)"/g,
+        '<a href="$1" target="_blank" rel="noopener noreferrer"'
+      );
+    })
   );
   return { id, ...(data as Omit<ArtworkData, "id" | "sections">), sections };
 }

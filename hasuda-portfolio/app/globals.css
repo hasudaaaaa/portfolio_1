@@ -1,6 +1,12 @@
 /* リセットCSS */
 :root{
   --text-black: #212121;
+  --font-primary: urw-din-semi-condensed, hiragino-kaku-gothic-pron, sans-serif;
+  --font-article: urw-din, hiragino-kaku-gothic-pron, sans-serif;
+}
+::selection {
+  background-color: #212121;
+  color: #ffffff;
 }
 html {
   font-size: 16px;
@@ -9,7 +15,7 @@ html {
 }
 body {
   margin: 0px;
-  font-family: urw-din-semi-condensed, hiragino-kaku-gothic-pron, sans-serif;
+  font-family: var(--font-primary);
   font-weight: 600;
   font-style: normal;
 }
@@ -20,10 +26,8 @@ main {
   color: var(--text-black);
   background-color: #f7f7f7;
 }
-::selection {
-  background-color: #212121;
-  color: #ffffff;
-}
+main h2 { margin: 0; }
+main h3 { margin-top: 0; }
 img {
   user-select: none;
 }
@@ -38,11 +42,18 @@ a{
   text-decoration: none;
   color: var(--text-black);
 }
+section { padding-bottom: 80px; }
+article h1 {
+  margin-bottom: 2rem;
+}
+article h2, article h3, article h4, article h5, article h6 {
+  margin-bottom: 1rem;
+}
 article a {
   text-decoration: underline;
   transition: all 0.3s ease;
 }
-article p a:hover {
+article a:hover {
   color: #4071a8;
   text-decoration: underline;
 }
@@ -81,12 +92,12 @@ button {
   background: none;
 }
 .W3 {
-  font-family: urw-din, hiragino-kaku-gothic-pron, sans-serif;
+  font-family: var(--font-article);
   font-weight: 300;
   font-style: normal;
 }
 .W6, strong {
-  font-family: urw-din, hiragino-kaku-gothic-pron, sans-serif;
+  font-family: var(--font-article);
   font-weight: 600;
   font-style: normal;
 }
@@ -131,14 +142,14 @@ i {
 }
 .button-type1 a {
   text-decoration: none;
-  color: #000000;
+  color: vaer(--text-black);
 }
 /*
 .button-type1::after {
   content: url("/images/icons/arrow_forward_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg");
 }*/
 .button-type2 {
-  color: #000000;
+  color: var(--text-black);
   border-bottom: solid 1px #00000056;
   height: 40px;
   min-width: 100px;
@@ -172,9 +183,7 @@ i {
   margin-bottom: 6rem;
   border-bottom: solid 3px var(--text-black);
 }
-main h2 { margin: 0; }
-main h3 { margin-top: 0; }
-section { padding-bottom: 80px; }
+
 
 .page-head2 {
   display: flex;
