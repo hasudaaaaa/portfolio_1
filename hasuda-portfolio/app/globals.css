@@ -54,7 +54,7 @@ article a {
   transition: all 0.3s ease;
 }
 article a:hover {
-  color: #4071a8;
+  color: #2e9aff;
   text-decoration: underline;
 }
 article p {
@@ -183,8 +183,6 @@ i {
   margin-bottom: 6rem;
   border-bottom: solid 3px var(--text-black);
 }
-
-
 .page-head2 {
   display: flex;
   flex-wrap: wrap;

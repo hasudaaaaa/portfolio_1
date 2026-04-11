@@ -14,9 +14,12 @@
   gap: 0;
 }
 .blogsItem a { text-decoration: none; }
-.blogsItem a:hover { text-decoration: underline; }
+.blogsItem a:hover {
+  text-decoration: underline; 
+  color: var(--text-black);
+}
 .blogsItem h3 {
-  color: rgb(41, 41, 41);
+  color: var(--text-black);
   font-size: 1rem;
   line-height: 1.2;
   margin: 0.5rem;

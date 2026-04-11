@@ -12,7 +12,7 @@
   aspect-ratio: 1 / 1;
   border-radius: 8%;
   overflow: hidden;
-  border: solid 1px #000000a6;
+  /*border: solid 1px #000000a6;*/
   width: min(400px, 30vw);
   height: auto;
   position: relative;

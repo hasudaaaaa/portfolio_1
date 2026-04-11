@@ -12,10 +12,11 @@
   text-decoration: none;
 }
 .artworksItem a:hover {
+  color: var(--text-black);
   text-decoration: underline;
 }
 .artworksItem h3 {
-  color: rgb(41, 41, 41);
+  color: var(--text-black);
   font-size: 1rem;
   line-height: 1;
   margin: 0.2rem 0;
@@ -23,6 +24,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.artworksItem small {
+  color: #555555;
 }
 .thumbnailFrame {
   width: var(--thumbnail-width);
