@@ -35,6 +35,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
         <link rel="preconnect" href="https://p.typekit.net" crossOrigin="" />
+        <meta name="color-scheme" content="only light"></meta>
       </head>
       <body>
         {/* Google Analytics */}

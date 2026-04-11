@@ -105,13 +105,6 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.imageModal::before,
-.imageModal::after {
-  content: "";
-  width: 1px;
-  height: calc(100vh + 1px);
-  display: flex;
-}
 .imageModalActive {
   display: flex;
 }
@@ -125,7 +118,7 @@
   filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.5));
 }
 .modalContent {
-  max-width: calc(100% - 2rem) !important;
+  max-width: 100% !important;
   max-height: calc(100svh - 2rem) !important;
   width: auto !important;
   height: auto !important;

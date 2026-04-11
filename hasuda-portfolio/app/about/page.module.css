@@ -34,11 +34,11 @@
 }
 .snsIcon:hover {
   filter: brightness(0.5);
-}
+}/*
 @media (prefers-color-scheme: dark) {
   .snsIcon { filter: brightness(1); }
   .snsIcon:hover { filter: brightness(0.5); }
-}
+}*/
 .resume { flex: 1; }
 .buttonRow {
   display: flex;
@@ -55,10 +55,10 @@
   background-color: #ececec;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
-}
+}/*
 .making:hover {
   background-color: #e0ecfe;
-}
+}*/
 .making h3 { font-size: 1.5rem; }
 .making img {
   width: 400px;

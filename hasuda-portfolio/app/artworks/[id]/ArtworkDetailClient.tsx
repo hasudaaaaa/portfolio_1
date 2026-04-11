@@ -131,16 +131,18 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
                 height={24}
               />
             </button>
-            <Image
-              src={artwork.imagePath}
-              alt={`${artwork.title} - 拡大表示`}
-              width={1200}
-              height={1600}
-              sizes="100vw"
-              unoptimized
-              className={styles.modalContent}
-              style={{ objectFit: "contain" }}
-            />
+            <a href={artwork.imagePath} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={artwork.imagePath}
+                alt={`${artwork.title} - 拡大表示`}
+                width={1200}
+                height={1600}
+                sizes="100vw"
+                unoptimized
+                className={styles.modalContent}
+                style={{ objectFit: "contain", cursor: "zoom-in" }}
+              />
+            </a>
           </div>
         </div>
       )}
