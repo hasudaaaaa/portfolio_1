@@ -9,6 +9,16 @@
       .cls-2 {
         fill: #1e2c3d;
       }
+
+      @media (prefers-color-scheme: dark) {
+        .cls-1 {
+          fill: transparent;
+        }
+
+        .cls-2 {
+          fill: #f7f7f7;
+        }
+      }
     </style>
   </defs>
   <circle class="cls-1" cx="512" cy="512" r="499.26"/>

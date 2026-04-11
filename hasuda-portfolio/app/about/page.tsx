@@ -29,7 +29,7 @@ export default function About() {
               <div className={styles.resume}>
                 <h2>蓮田</h2>
                 <small>mail : contact@hasuda.org</small>
-                <ul className={`${styles.snsLinks} brightness-0`}>
+                <ul className={`${styles.snsLinks}`}>
                   <li>
                     <a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
                       <Image src="/images/icons/brand-twitter1.svg" alt="twitter" width={32} height={32} className={styles.snsIcon} />
@@ -77,7 +77,7 @@ export default function About() {
                   <li>Adobe Illustrator</li>
                   <li>Adobe InDesign</li>
                   <li>(Adobe After Effects)</li>
-                </ul>
+                </ul>{/*
                 <h3>作業環境</h3>
                 <ul className="W3">
                   <li>CASE : NZXT H510 Elite</li>
@@ -85,12 +85,39 @@ export default function About() {
                   <li>GPU : GeForce RTX 4070</li>
                   <li>RAM : DDR5 64GB</li>
                   <li>Pen-Tablet : XP-Pen Deco 02</li>
-                </ul>
+                </ul>*/}
                 <h3>資格等</h3>
                 <ul className="W3">
                   <li>エックス線作業主任者</li>
                   <li>危険物取扱者乙種4類</li>
                 </ul>
+              </div>
+            </section>
+
+            <section>
+              <hgroup className="page-head2">
+                <h2>"hasuda.org" について</h2>
+                <small>About this website.</small>
+              </hgroup>
+              <div className={`${styles.bio}`} >
+                <div>
+                  <div className={styles.profileAvater}>
+                  <Image src="/icon.svg" alt="プロフィール画像" fill quality={100}/>
+                  </div>
+                </div>
+                <div className={styles.resume}>
+                  <h2>HASUDA.ORG</h2>
+                  <small>hasuda's Non-portfolio site</small>
+                  <p >
+                    hasuda.org は、人類のケモ耳美少女化を画策するトランスヒューマニスト団体です。<span className="W3">嘘です。</span>
+                  </p>
+                  <p className="W3">
+                    当ウェブサイトは蓮田が制作したものたちを公開する場所として用意しました。「ポートフォリオサイト」と言うには内容の選定がされておらず、作品に付すコメントも適当なので、 "Non-portfolio site" と称しています。優しい気持ちでご覧になってください。
+                  </p>
+                  <p className="W3">
+                    個人サイトなのに .org ドメインを使っているのは、これが一番安かったからです。
+                  </p>
+                </div>
               </div>
             </section>
 
@@ -100,7 +127,7 @@ export default function About() {
                 <small>How my illustrations are made.</small>
               </hgroup>
               <p className={`${styles.makingIntroduction} W3`}>
-                Blenderを使った制作フローは、人気イラストレーター{" "}
+                Blenderを使った制作フローは、人気イラストレーター
                 <a href="https://twitter.com/HOooooZY" className="W6" target="_blank" rel="noopener noreferrer">HOJI氏</a>
                 の作品に影響されて取り入れているものです。
                 2020年ごろに初めて彼の絵を目にして以来その作風に惚れこんでしまい、今や彼が持つ技術に対する憧れや羨望が私のイラスト制作の原動力となっています。
