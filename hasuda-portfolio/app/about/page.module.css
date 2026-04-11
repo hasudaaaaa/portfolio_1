@@ -18,7 +18,6 @@
   position: relative;
   min-width: 200px;
 }
-.brightness0 { filter: brightness(0.1); }
 .snsLinks {
   padding-left: 0;
   list-style: none;
