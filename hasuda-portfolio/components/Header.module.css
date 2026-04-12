@@ -55,11 +55,12 @@
   filter: brightness(0.1);
   transition: transform 0.3s ease;
 }
+/*
 @media (prefers-color-scheme: dark) {
   .menuIcon {
     filter: brightness(1);
   }
-}
+}*/
 @media screen and (500px >= width) {
   .navMenu li a{
     display: none;
@@ -73,7 +74,7 @@
   position: fixed;
   top: 0;
   right: -450px;
-  width: min(400px, 85vw);
+  width: min(350px, 75vw);
   height: 100vh;
   color: white;
   transition: right 0.3s ease;

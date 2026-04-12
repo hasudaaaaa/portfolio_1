@@ -102,17 +102,17 @@ export default function About() {
               <div className={`${styles.bio}`} >
                 <div>
                   <div className={styles.profileAvater}>
-                  <Image src="/icon.svg" alt="プロフィール画像" fill quality={100}/>
+                  <Image src="/images/icon.svg" alt="プロフィール画像" fill quality={100}/>
                   </div>
                 </div>
                 <div className={styles.resume}>
                   <h2>HASUDA.ORG</h2>
                   <small>hasuda's Non-portfolio site</small>
-                  <p >
-                    hasuda.org は、人類のケモ耳美少女化を画策するトランスヒューマニスト団体です。<span className="W3">嘘です。</span>
+                  <p>
+                    hasuda.org は、人類の「ケモ耳美少女化」を画策するトランスヒューマニスト団体です。<span className="W3">嘘です。</span>
                   </p>
                   <p className="W3">
-                    当ウェブサイトは蓮田が制作したものたちを公開する場所として用意しました。「ポートフォリオサイト」と言うには内容の選定がされておらず、作品に付すコメントも適当なので、 "Non-portfolio site" と称しています。優しい気持ちでご覧になってください。
+                    当ウェブサイトは蓮田が制作したものたちを公開する場所として用意しました。ポートフォリオサイトと言うには内容の選定がされておらず、アナログデッサンもない上に作品に付すコメントも適当なので、 "Non-portfolio site" と称しています。優しい気持ちでご覧になってください。
                   </p>
                   <p className="W3">
                     個人サイトなのに .org ドメインを使っているのは、これが一番安かったからです。

@@ -94,7 +94,7 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
             <section className={styles.backToArtworks}>
               <Link href="/artworks#gallery-container">
                 <div className="button-type1 glass-container-type2">
-                  <div>一覧に戻る</div>
+                  一覧に戻る
                 </div>
               </Link>
             </section>
@@ -140,7 +140,7 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
                 sizes="100vw"
                 unoptimized
                 className={styles.modalContent}
-                style={{ objectFit: "contain", cursor: "zoom-in" }}
+                style={{ objectFit: "contain", cursor: "pointer" }}
               />
             </a>
           </div>

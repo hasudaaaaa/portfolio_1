@@ -3,6 +3,8 @@
   --text-black: #212121;
   --font-primary: urw-din-semi-condensed, hiragino-kaku-gothic-pron, sans-serif;
   --font-article: urw-din, hiragino-kaku-gothic-pron, sans-serif;
+  --weight-bold: 600;
+  --weight-regular: 300;
 }
 ::selection {
   background-color: #212121;
@@ -16,7 +18,7 @@ html {
 body {
   margin: 0px;
   font-family: var(--font-primary);
-  font-weight: 600;
+  font-weight: var(--weight-bold);
   font-style: normal;
 }
 main {
@@ -33,10 +35,10 @@ img {
 }
 h1 {
   margin: 0px;
-  font-weight: 600;
+  font-weight: var(--weight-bold);
 }
 h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-weight: var(--weight-bold);
 }
 a{
   text-decoration: none;
@@ -90,15 +92,17 @@ button {
   font: inherit;
   color: inherit;
   background: none;
+  cursor: pointer;
+  user-select: none;
 }
 .W3 {
   font-family: var(--font-article);
-  font-weight: 300;
+  font-weight: var(--weight-regular);
   font-style: normal;
 }
 .W6, strong {
   font-family: var(--font-article);
-  font-weight: 600;
+  font-weight: var(--weight-bold);
   font-style: normal;
 }
 i {
@@ -136,13 +140,10 @@ i {
   justify-content: center;
   transition: transform 0.2s ease-in;
   position: relative;
+  user-select: none;
 }
 .button-type1:hover {
   transform: scale(1.05);
-}
-.button-type1 a {
-  text-decoration: none;
-  color: vaer(--text-black);
 }
 /*
 .button-type1::after {
