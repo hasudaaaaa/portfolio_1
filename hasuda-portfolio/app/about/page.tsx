@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { defaultOpenGraph } from "@/lib/metadata";
+import { HasudaIcon } from "@/components/icons/hasuda-icon";
 
 export const metadata: Metadata = {
   title: "プロフィール - hasuda.org",
@@ -57,7 +58,7 @@ export default function About() {
                   3DCGで背景を作り、ペイントソフトで背景の着彩とキャラクターの描画を行っています。<br />
                   サークルの企画や個人での同人誌作成のためにDTPやデザインをゆるく勉強中です。
                 </p>
-                <div className={styles.buttonRow}>
+                <div className={`${styles.buttonRow}`}>
                   <Link href="/artworks">
                     <div className="button-type1 glass-container-type2">
                       作品を見る
@@ -101,8 +102,8 @@ export default function About() {
               </hgroup>
               <div className={`${styles.bio}`} >
                 <div>
-                  <div className={styles.profileAvater}>
-                  <Image src="/images/icon.svg" alt="プロフィール画像" fill quality={100}/>
+                  <div className={`${styles.profileAvater} ${styles.HasudaIcon}`}>
+                    <HasudaIcon/>
                   </div>
                 </div>
                 <div className={styles.resume}>

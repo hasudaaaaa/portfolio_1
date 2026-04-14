@@ -12,11 +12,24 @@
   aspect-ratio: 1 / 1;
   border-radius: 8%;
   overflow: hidden;
-  /*border: solid 1px #000000a6;*/
+  border: solid 1px #000000a6;
   width: min(400px, 30vw);
   height: auto;
   position: relative;
   min-width: 200px;
+}
+.HasudaIcon {
+  color: #1e2c3d;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+.HasudaIcon:hover {
+  color: #2e4c70;
+  transform: translate(-5px, -10px);
+  --hasuda-icon-shadow: rgba(0, 0, 0, 0.2) 7px 10px 16px 5px;
+  box-shadow: var(--hasuda-icon-shadow), 
+    inset var(--hasuda-icon-shadow);
 }
 .snsLinks {
   padding-left: 0;
