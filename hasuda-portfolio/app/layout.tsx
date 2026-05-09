@@ -36,6 +36,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
         <link rel="preconnect" href="https://p.typekit.net" crossOrigin="" />
         <meta name="color-scheme" content="only light"></meta>
+        <meta name="description" content="趣味絵描き人間 蓮田の個人サイト" />
       </head>
       <body>
         {/* Google Analytics */}
