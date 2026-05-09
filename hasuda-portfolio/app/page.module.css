@@ -205,7 +205,7 @@
   width: 100vw;
   margin-left: calc((100vw - min(1232px, calc(100vw - 2rem))) / -2);
   overflow: hidden;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 0;
   cursor: grab;
   touch-action: pan-y;
 }
@@ -218,24 +218,29 @@
 .artworkLane {
   display: flex;
   width: max-content;
-  gap: 1rem;
-  padding: 0 max(1rem, calc((100vw - min(1232px, calc(100vw - 2rem))) / 2));
+  padding: 0;
   margin: 0;
-  list-style: none;
   animation: artwork-lane 45s linear infinite;
   translate: var(--drag-offset, 0px) 0;
   will-change: transform, translate;
 }
 
-.artworkMarquee:hover .artworkLane,
-.artworkMarquee:focus-within .artworkLane,
+.artworkGroup {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1rem;
+  padding: 0 1rem 0 0;
+  margin: 0;
+  list-style: none;
+}
+
 .isDragging .artworkLane {
   animation-play-state: paused;
 }
 
 @keyframes artwork-lane {
   from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(calc(-50% - 0.5rem), 0, 0); }
+  to { transform: translate3d(-25%, 0, 0); }
 }
 
 .featuredCard {
@@ -250,27 +255,14 @@
   -webkit-user-drag: none;
 }
 
-.featuredCard h3 {
-  max-width: 220px;
-  margin: 0.5rem 0 0.15rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 1rem;
-}
-
-.featuredCard small {
-  color: #626262;
-}
-
 .featuredImage {
   position: relative;
   width: 220px;
   height: 220px;
   overflow: hidden;
   border-radius: 8px;
+  border: solid 1px #000000a6;
   background-color: #e7e7e7;
-  box-shadow: rgba(0, 0, 0, 0.12) 0 8px 18px;
 }
 
 .featuredImage img {
@@ -285,11 +277,10 @@
 }
 
 .aboutPreview {
-  display: grid;
-  grid-template-columns: minmax(220px, 300px) 1fr;
+  display: flex;
+  align-items: flex-start;
   gap: 4rem;
   padding-bottom: 6rem;
-  border-radius: 8px;
 }
 
 .aboutImage {
@@ -298,6 +289,10 @@
   overflow: hidden;
   border-radius: 8%;
   border: solid 1px #000000a6;
+  width: min(320px, 30vw);
+  height: auto;
+  min-width: 200px;
+  flex: 0 0 auto;
 }
 
 .aboutImage img {
@@ -307,6 +302,10 @@
 .aboutText p {
   max-width: 48rem;
   line-height: 1.9;
+}
+
+.aboutText {
+  flex: 1;
 }
 
 .snsLinks {
@@ -382,18 +381,15 @@
   .sectionHead {
     align-items: flex-end;
   }
-
-  .aboutPreview {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .aboutImage {
-    width: min(100%, 320px);
-  }
-
   .processGrid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .aboutPreview {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
 
@@ -407,9 +403,6 @@
     height: 170px;
   }
 
-  .featuredCard h3 {
-    max-width: 170px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

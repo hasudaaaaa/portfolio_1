@@ -7,9 +7,9 @@ import type { ArtworkData } from "@/lib/getArtworks";
 import styles from "@/app/page.module.css";
 
 export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkData[] }) {
-  const laneArtworks = [...artworks, ...artworks];
+  const artworkGroups = [artworks, artworks, artworks, artworks];
   const laneRef = useRef<HTMLDivElement>(null);
-  const artworkLaneRef = useRef<HTMLUListElement>(null);
+  const artworkLaneRef = useRef<HTMLDivElement>(null);
   const startXRef = useRef(0);
   const dragOffsetStartRef = useRef(0);
   const dragOffsetRef = useRef(0);
@@ -17,8 +17,15 @@ export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkDat
   const [isDragging, setIsDragging] = useState(false);
 
   const setDragOffset = (offset: number) => {
-    dragOffsetRef.current = offset;
-    artworkLaneRef.current?.style.setProperty("--drag-offset", `${offset}px`);
+    const artworkLane = artworkLaneRef.current;
+    const secondGroup = artworkLane?.children[1] as HTMLElement | undefined;
+    const loopWidth = secondGroup?.offsetLeft ?? 0;
+    const normalizedOffset = loopWidth
+      ? ((offset % loopWidth) + loopWidth) % loopWidth - loopWidth
+      : offset;
+
+    dragOffsetRef.current = normalizedOffset;
+    artworkLane?.style.setProperty("--drag-offset", `${normalizedOffset}px`);
   };
 
   return (
@@ -49,34 +56,37 @@ export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkDat
         setIsDragging(false);
       }}
     >
-      <ul className={styles.artworkLane} ref={artworkLaneRef}>
-        {laneArtworks.map((artwork, index) => (
-          <li className={styles.featuredCard} key={`${artwork.id}-${index}`}>
-            <Link
-              href={`/artworks/${artwork.id}`}
-              aria-label={`${artwork.title} の詳細を見る`}
-              onClick={(event) => {
-                if (!draggedRef.current) return;
-                event.preventDefault();
-                event.stopPropagation();
-              }}
-            >
-              <div className={styles.featuredImage}>
-                <Image
-                  src={artwork.thumbnailPath}
-                  alt={artwork.title}
-                  width={220}
-                  height={220}
-                  quality={90}
-                  draggable={false}
-                />
-              </div>
-              <h3>{artwork.title}</h3>
-              <small className="W3">{artwork.date}</small>
-            </Link>
-          </li>
+      <div className={styles.artworkLane} ref={artworkLaneRef}>
+        {artworkGroups.map((group, groupIndex) => (
+          <ul className={styles.artworkGroup} key={groupIndex} aria-hidden={groupIndex === 0 ? undefined : true}>
+            {group.map((artwork) => (
+              <li className={styles.featuredCard} key={`${artwork.id}-${groupIndex}`}>
+                <Link
+                  href={`/artworks/${artwork.id}`}
+                  aria-label={`${artwork.title} の詳細を見る`}
+                  tabIndex={groupIndex === 0 ? undefined : -1}
+                  onClick={(event) => {
+                    if (!draggedRef.current) return;
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }}
+                >
+                  <div className={styles.featuredImage}>
+                    <Image
+                      src={artwork.thumbnailPath}
+                      alt={artwork.title}
+                      width={220}
+                      height={220}
+                      quality={90}
+                      draggable={false}
+                    />
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

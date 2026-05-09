@@ -69,7 +69,7 @@ export default function Home() {
           <div className={styles.sectionHead}>
             <div>
               <small>FEATURED ARTWORKS</small>
-              <h2 id="featured-artworks">作品</h2>
+              <h2 id="featured-artworks">最近の作品</h2>
             </div>
           </div>
           <FeaturedArtworkLane artworks={featuredArtworks} />
