@@ -1,9 +1,10 @@
-.keyvisual {
+.hero {
   width: 100%;
   height: 100lvh;
   position: relative;
   z-index: 0;
   overflow: hidden;
+  padding-bottom: 0;
 }
 .keyvisualBG,
 .keyvisualCharacter,
@@ -153,4 +154,270 @@
 }
 .profileLinks a {
   text-decoration: none;
+}
+
+.homeSections {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  overflow: hidden;
+  padding: 7rem 0 8rem;
+}
+
+.featuredSection,
+.aboutPreview,
+.processPreview {
+  width: min(1232px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-bottom: 0;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: solid 3px var(--text-black);
+  padding-bottom: 0.75rem;
+}
+
+.sectionAction {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.sectionHead small,
+.aboutText small {
+  display: block;
+  color: #626262;
+  margin-bottom: 0.35rem;
+}
+
+.sectionHead h2,
+.aboutText h2 {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.artworkMarquee {
+  width: 100vw;
+  margin-left: calc((100vw - min(1232px, calc(100vw - 2rem))) / -2);
+  overflow: hidden;
+  padding: 1rem 0 2rem;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.isDragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.artworkLane {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding: 0 max(1rem, calc((100vw - min(1232px, calc(100vw - 2rem))) / 2));
+  margin: 0;
+  list-style: none;
+  animation: artwork-lane 45s linear infinite;
+  translate: var(--drag-offset, 0px) 0;
+  will-change: transform, translate;
+}
+
+.artworkMarquee:hover .artworkLane,
+.artworkMarquee:focus-within .artworkLane,
+.isDragging .artworkLane {
+  animation-play-state: paused;
+}
+
+@keyframes artwork-lane {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(calc(-50% - 0.5rem), 0, 0); }
+}
+
+.featuredCard {
+  flex: 0 0 220px;
+  border-radius: 8px;
+}
+
+.featuredCard a {
+  display: block;
+  color: var(--text-black);
+  text-decoration: none;
+  -webkit-user-drag: none;
+}
+
+.featuredCard h3 {
+  max-width: 220px;
+  margin: 0.5rem 0 0.15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.featuredCard small {
+  color: #626262;
+}
+
+.featuredImage {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 8px 18px;
+}
+
+.featuredImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.featuredCard:hover .featuredImage img {
+  transform: scale(1.12);
+}
+
+.aboutPreview {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: 4rem;
+  padding-bottom: 6rem;
+  border-radius: 8px;
+}
+
+.aboutImage {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8%;
+  border: solid 1px #000000a6;
+}
+
+.aboutImage img {
+  object-fit: cover;
+}
+
+.aboutText p {
+  max-width: 48rem;
+  line-height: 1.9;
+}
+
+.snsLinks {
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 2rem 2rem 2rem;
+  gap: 2rem;
+  margin: 1rem 0 2rem;
+}
+
+.snsIcon {
+  width: 2rem !important;
+  height: 2rem !important;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(0.1);
+}
+
+.snsIcon:hover {
+  filter: brightness(0.5);
+}
+
+.linkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.processCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #ececec;
+}
+
+.processImage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #dcdcdc;
+}
+
+.processImage img {
+  object-fit: cover;
+}
+
+.processCard h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.processCard p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+@media screen and (width <= 800px) {
+  .homeSections {
+    gap: 4rem;
+    padding-top: 5rem;
+  }
+
+  .sectionHead {
+    align-items: flex-end;
+  }
+
+  .aboutPreview {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .aboutImage {
+    width: min(100%, 320px);
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (width <= 500px) {
+  .featuredCard {
+    flex-basis: 170px;
+  }
+
+  .featuredImage {
+    width: 170px;
+    height: 170px;
+  }
+
+  .featuredCard h3 {
+    max-width: 170px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artworkLane {
+    animation: none;
+  }
+
+  .featuredImage img {
+    transition: none;
+  }
 }
