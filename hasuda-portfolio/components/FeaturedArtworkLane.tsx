@@ -3,10 +3,12 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { ArtworkData } from "@/lib/getArtworks";
 import styles from "./FeaturedArtworkLane.module.css";
 
 export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkData[] }) {
+  const router = useRouter();
   const artworkGroups = [artworks, artworks, artworks, artworks];
   const laneRef = useRef<HTMLDivElement>(null);
   const artworkLaneRef = useRef<HTMLDivElement>(null);
@@ -14,6 +16,8 @@ export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkDat
   const dragOffsetStartRef = useRef(0);
   const dragOffsetRef = useRef(0);
   const draggedRef = useRef(false);
+  const pointerLinkRef = useRef<HTMLAnchorElement | null>(null);
+  const suppressNextClickRef = useRef(false);
   const [isDragging, setIsDragging] = useState(false);
 
   const setDragOffset = (offset: number) => {
@@ -40,6 +44,7 @@ export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkDat
         startXRef.current = event.clientX;
         dragOffsetStartRef.current = dragOffsetRef.current;
         draggedRef.current = false;
+        pointerLinkRef.current = (event.target as HTMLElement).closest("a");
         setIsDragging(true);
       }}
       onPointerMove={(event) => {
@@ -51,8 +56,19 @@ export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkDat
       onPointerUp={(event) => {
         laneRef.current?.releasePointerCapture(event.pointerId);
         setIsDragging(false);
+
+        const link = pointerLinkRef.current;
+        pointerLinkRef.current = null;
+
+        if (!link || draggedRef.current || event.button !== 0) return;
+        const href = link.getAttribute("href");
+        if (href) {
+          suppressNextClickRef.current = true;
+          router.push(href);
+        }
       }}
       onPointerCancel={() => {
+        pointerLinkRef.current = null;
         setIsDragging(false);
       }}
     >
@@ -66,9 +82,11 @@ export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkDat
                   aria-label={`${artwork.title} の詳細を見る`}
                   tabIndex={groupIndex === 0 ? undefined : -1}
                   onClick={(event) => {
-                    if (!draggedRef.current) return;
+                    if (!draggedRef.current && !suppressNextClickRef.current) return;
+
                     event.preventDefault();
                     event.stopPropagation();
+                    suppressNextClickRef.current = false;
                   }}
                 >
                   <div className={styles.featuredImage}>
