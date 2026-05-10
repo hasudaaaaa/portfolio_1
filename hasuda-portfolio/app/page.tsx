@@ -5,6 +5,8 @@ import styles from "./page.module.css";
 import { defaultOpenGraph } from "@/lib/metadata";
 import { getAllArtworks } from "@/lib/getArtworks";
 import FeaturedArtworkLane from "@/components/FeaturedArtworkLane";
+import DraggableProfileCard from "@/components/DraggableProfileCard";
+import { HasudaIcon } from "@/components/icons/hasuda-icon";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://hasuda.org" },
@@ -36,7 +38,10 @@ export default function Home() {
       <h1 className={styles.pageTitle}>
         HASUDA&apos;s<br />PORTFOLIO
       </h1>*/}
-      <div className={`${styles.profileCard} glass-container-type2`}>
+      <DraggableProfileCard
+        className={`${styles.profileCard} glass-container-type2`}
+        draggingClassName={styles.profileCardDragging}
+      >
         <div className={styles.profileContents}>
           <div className={styles.profileRow1}>
             <div className={styles.profileAvater}>
@@ -45,6 +50,9 @@ export default function Home() {
             <div>
               <h1 className={styles.profileDisplayName}>蓮田</h1>
               <p className={styles.profileHandle}>@hasuda.org</p>
+            </div>
+            <div className={styles.hasudaIcon}>
+              <HasudaIcon />
             </div>
           </div>
           <div className={styles.profileDetail}>
@@ -63,7 +71,8 @@ export default function Home() {
             </div>*/}
           </div>
         </div>
-      </div>
+      </DraggableProfileCard>
+      <div className={styles.spacer}></div>
       <div className={styles.homeSections}>
         <section className={styles.featuredSection} aria-labelledby="featured-artworks">
           <div className={styles.sectionHead}>
@@ -74,7 +83,7 @@ export default function Home() {
           </div>
           <FeaturedArtworkLane artworks={featuredArtworks} />
           <div className={styles.sectionAction}>
-            <Link href="/artworks" className="button-type1">
+            <Link href="/artworks" className="button-type1 forward">
               作品一覧
             </Link>
           </div>
@@ -110,7 +119,7 @@ export default function Home() {
             </p>
             
             <div className={styles.linkRow}>
-              <Link href="/about" className="button-type1">
+              <Link href="/about" className="button-type1 forward">
                 詳しく見る
               </Link>
             </div>
@@ -139,8 +148,8 @@ export default function Home() {
             ))}
           </div>
           <div className={styles.sectionAction}>
-            <Link href="/about#making" className="button-type1">
-              工程を見る
+            <Link href="/about#making" className="button-type1 forward">
+              詳しく見る
             </Link>
           </div>
         </section>

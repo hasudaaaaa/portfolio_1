@@ -82,6 +82,11 @@
   border-right: 2px rgba(40,40,40,0.35) solid;
   transition: transform 0.5s ease-out;
   overflow: hidden;
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+  transform: translate3d(var(--profile-card-x, 0), calc(var(--profile-card-y, 0) + var(--profile-card-hover-y, 0px)), 0);
+  will-change: transform;
 }
 @media screen and (500px >= width) {
   .profileCard {
@@ -110,8 +115,15 @@
 
 
 */
-.profileCard:hover{
-  transform: translateY(-10px);
+.profileCard:hover {
+  --profile-card-hover-y: -10px;
+}
+
+.profileCardDragging,
+.profileCardDragging:hover {
+  --profile-card-hover-y: 0px;
+  cursor: grabbing;
+  transition: none;
 }
 
 .profileContents {
@@ -120,7 +132,7 @@
 }
 .profileRow1 {
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 80px 1fr 40px;
   align-items: flex-start;
   gap: 1.5rem;
   position: relative;
@@ -140,6 +152,9 @@
   margin-top: 0;
   color: #000000a6;
 }
+.hasudaIcon {
+  color: var(--dark-blue)
+}
 .profileDetail {
   margin-top: 0.5rem;
 }
@@ -154,7 +169,11 @@
 .profileLinks a {
   text-decoration: none;
 }
-
+.spacer {
+  height: 6rem;
+  background: var(--dark-blue);
+  border-bottom: solid 1rem #ffd269;
+}
 .homeSections {
   display: flex;
   flex-direction: column;

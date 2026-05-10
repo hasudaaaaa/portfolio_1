@@ -1,5 +1,5 @@
 :root {
-  --featuredImage-size: 25vw;
+  --featuredImage-size: max(25vw, 200px);
 }
 
 .artworkMarquee {
@@ -75,12 +75,6 @@
 
 .featuredCard:hover .featuredImage img {
   transform: scale(1.12);
-}
-
-@media screen and (width <= 500px) {
-  :root {
-    --featuredImage-size: 200px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

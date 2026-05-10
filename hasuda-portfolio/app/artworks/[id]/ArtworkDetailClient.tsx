@@ -93,7 +93,7 @@ export default function ArtworkDetailClient({ artwork }: { artwork: ArtworkData 
 
             <section className={styles.backToArtworks}>
               <Link href="/artworks#gallery-container">
-                <div className="button-type1 glass-container-type2">
+                <div className="button-type1 backward glass-container-type2">
                   一覧に戻る
                 </div>
               </Link>

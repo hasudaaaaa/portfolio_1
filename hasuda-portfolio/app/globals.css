@@ -138,7 +138,6 @@ i {
   font-size: 1rem;
   padding: 0 1rem;
   display: inline-flex;
-  gap: 0.5rem;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease-in-out;
@@ -149,10 +148,17 @@ i {
   transform: scale(.95);
   color: #000000bb;
 }
-/*
-.button-type1::after {
-  content: url("/images/icons/arrow_forward_24dp_5F6368_FILL0_wght300_GRAD0_opsz24.svg");
-}*/
+
+.button-type1.forward::after {
+  content: url("/images/icons/arrow_forward_ios_24dp_5F6368_FILL0_wght600_GRAD0_opsz24.svg");
+  transform: translateY(2px);
+  scale: 0.66;
+}
+.button-type1.backward::before {
+  content: url("/images/icons/arrow_back_ios_24dp_5F6368_FILL0_wght600_GRAD0_opsz24.svg");
+  transform: translateY(2px);
+  scale: 0.66;
+}
 .button-type2 {
   color: var(--text-black);
   border-bottom: solid 1px #00000056;

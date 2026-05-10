@@ -19,7 +19,7 @@
   min-width: 200px;
 }
 .HasudaIcon {
-  color: #1e2c3d;
+  color: var(--dark-blue);
   border-radius: 50%;
   border: none;
   transition: all 0.3s ease-in-out;
