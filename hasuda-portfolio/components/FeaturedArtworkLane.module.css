@@ -1,0 +1,94 @@
+:root {
+  --featuredImage-size: 25vw;
+}
+
+.artworkMarquee {
+  width: 100vw;
+  margin-left: calc((100vw - min(1232px, calc(100vw - 2rem))) / -2);
+  overflow: hidden;
+  padding: 1rem 0 0;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.isDragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.artworkLane {
+  display: flex;
+  width: max-content;
+  padding: 0;
+  margin: 0;
+  animation: artwork-lane 45s linear infinite;
+  translate: var(--drag-offset, 0px) 0;
+  will-change: transform, translate;
+}
+
+.artworkGroup {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1rem;
+  padding: 0 1rem 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.isDragging .artworkLane {
+  animation-play-state: paused;
+}
+
+@keyframes artwork-lane {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-25%, 0, 0); }
+}
+
+.featuredCard {
+  flex: 0 0 var(--featuredImage-size);
+  border-radius: 8px;
+}
+
+.featuredCard a {
+  display: block;
+  color: var(--text-black);
+  text-decoration: none;
+  -webkit-user-drag: none;
+}
+
+.featuredImage {
+  position: relative;
+  width: var(--featuredImage-size);
+  height: var(--featuredImage-size);
+  overflow: hidden;
+  border-radius: 8px;
+  border: solid 1px #000000a6;
+  background-color: #e7e7e7;
+}
+
+.featuredImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.featuredCard:hover .featuredImage img {
+  transform: scale(1.12);
+}
+
+@media screen and (width <= 500px) {
+  :root {
+    --featuredImage-size: 200px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artworkLane {
+    animation: none;
+  }
+
+  .featuredImage img {
+    transition: none;
+  }
+}

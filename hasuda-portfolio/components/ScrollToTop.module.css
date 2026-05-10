@@ -13,7 +13,7 @@
 }
 .rollupImg:hover {
   transform: translate(0, -5px);
-  box-shadow: #2e9aff 0px 5px 0px 0px;
+  box-shadow: var(--accent-blue) 0px 5px 0px 0px;
   scale: 1.1;
 }
 @media screen and (max-width: 600px) {

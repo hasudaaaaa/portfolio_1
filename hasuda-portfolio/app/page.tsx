@@ -49,7 +49,7 @@ export default function Home() {
           </div>
           <div className={styles.profileDetail}>
             <p>graduate student <span className="W3">/</span> Illustration, 3DCG</p>
-            <div className={styles.profileLinks}>
+            {/*<div className={styles.profileLinks}>
               <Link href="/about">
                 <div className="button-type1">
                   プロフィール
@@ -60,7 +60,7 @@ export default function Home() {
                   作品一覧
                 </div>
               </Link>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>
@@ -87,10 +87,6 @@ export default function Home() {
           <div className={styles.aboutText}>
             <small>ABOUT</small>
             <h2 id="about-preview">蓮田</h2>
-            <p className="W3">
-              2023年2月ごろから、ケモ耳の女の子をメインに据えた一次創作を中心にイラストを描いています。
-              3DCGで背景を作り、ペイントソフトで背景の着彩とキャラクターの描画を行っています。
-            </p>
             <ul className={styles.snsLinks} aria-label="SNSリンク">
               <li>
                 <a href="https://twitter.com/hasudaaaaaaa" target="_blank" rel="noopener noreferrer">
@@ -108,12 +104,14 @@ export default function Home() {
                 </a>
               </li>
             </ul>
+            <p className="W3">
+              2023年2月ごろから、ケモ耳の女の子をメインに据えた一次創作を中心にイラストを描いています。
+              3DCGで背景を作り、ペイントソフトで背景の着彩とキャラクターの描画を行っています。
+            </p>
+            
             <div className={styles.linkRow}>
               <Link href="/about" className="button-type1">
-                プロフィール
-              </Link>
-              <Link href="/blogs" className="button-type1">
-                ブログ
+                詳しく見る
               </Link>
             </div>
           </div>

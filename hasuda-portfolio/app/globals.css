@@ -1,6 +1,9 @@
 /* リセットCSS */
 :root{
   --text-black: #212121;
+  --background-white: #f7f7f7;
+  --dark-blue: #1e2c3d;
+  --accent-blue: #2e9aff;
   --font-primary: urw-din-semi-condensed, hiragino-kaku-gothic-pron, sans-serif;
   --font-article: urw-din, hiragino-kaku-gothic-pron, sans-serif;
   --weight-bold: 600;
@@ -26,7 +29,7 @@ main {
   flex-direction: column;
   min-height: calc(100lvh - 200px);
   color: var(--text-black);
-  background-color: #f7f7f7;
+  background-color: var(--background-white);
 }
 main h2 { margin: 0; }
 main h3 { margin-top: 0; }
@@ -56,7 +59,7 @@ article a {
   transition: all 0.3s ease;
 }
 article a:hover {
-  color: #2e9aff;
+  color: var(--accent-blue);
   text-decoration: underline;
 }
 article p {
@@ -129,7 +132,7 @@ i {
 .button-type1 {
   background-color: #ffffff71;
   border: solid 2px #00000056;
-  height: 40px;
+  height: 35px;
   border-radius: 20px;
   min-width: 100px;
   font-size: 1rem;
@@ -138,12 +141,13 @@ i {
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease-in;
+  transition: all 0.2s ease-in-out;
   position: relative;
   user-select: none;
 }
 .button-type1:hover {
-  transform: scale(1.05);
+  transform: scale(.95);
+  color: #000000bb;
 }
 /*
 .button-type1::after {
@@ -152,14 +156,14 @@ i {
 .button-type2 {
   color: var(--text-black);
   border-bottom: solid 1px #00000056;
-  height: 40px;
+  height: 35px;
   min-width: 100px;
   font-size: 1rem;
   padding: 0 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in-out;
   position: relative;
 }
 .button-type2:hover {

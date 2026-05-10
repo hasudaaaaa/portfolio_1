@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ArtworkData } from "@/lib/getArtworks";
-import styles from "@/app/page.module.css";
+import styles from "./FeaturedArtworkLane.module.css";
 
 export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkData[] }) {
   const artworkGroups = [artworks, artworks, artworks, artworks];
@@ -75,8 +75,8 @@ export default function FeaturedArtworkLane({ artworks }: { artworks: ArtworkDat
                     <Image
                       src={artwork.thumbnailPath}
                       alt={artwork.title}
-                      width={220}
-                      height={220}
+                      width={400}
+                      height={400}
                       quality={90}
                       draggable={false}
                     />

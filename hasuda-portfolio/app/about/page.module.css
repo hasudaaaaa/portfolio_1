@@ -62,6 +62,7 @@
 .buttonRow a { text-decoration: none; }
 .making {
   display: flex;
+  align-items: flex-start;
   gap: 4rem;
   padding: 1rem;
   margin-bottom: 4rem;
@@ -72,14 +73,19 @@
 .making:hover {
   background-color: #e0ecfe;
 }*/
-.making h3 { font-size: 1.5rem; }
+.making h3 { 
+  font-size: 2rem; 
+  color: var(--dark-blue);
+  padding: 0 0 0 1rem;
+  border-left: solid 5px var(--dark-blue);
+}
 .making img {
   width: 400px;
   height: auto;
   object-fit: scale-down;
   border-radius: 10px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .making {
     flex-direction: column;
     gap: 1.5rem;
