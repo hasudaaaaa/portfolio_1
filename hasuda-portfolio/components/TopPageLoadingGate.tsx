@@ -7,7 +7,8 @@ const MIN_LOADING_MS = 1500;
 const MAX_LOADING_MS = 3000;
 const EXIT_ANIMATION_MS = 500;
 const LOADER_STORAGE_KEY = "hasudaTopLoaderShownAt";
-const LOADER_SKIP_TTL_MS = 6 * 60 * 60 * 1000; // 次回ローディング画面表示まで6時間
+// 次回ローディング画面表示まで6時間
+const LOADER_SKIP_TTL_MS = 6 * 60 * 60 * 1000;
 
 type Props = {
   forceVisible?: boolean;

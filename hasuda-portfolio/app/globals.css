@@ -140,7 +140,7 @@ i {
   padding: 0 1rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   transition: all 0.2s ease-in-out;
   position: relative;
   user-select: none;
@@ -152,12 +152,12 @@ i {
 
 .button-type1.forward::after {
   content: url("/images/icons/arrow_forward_ios_24dp_5F6368_FILL0_wght600_GRAD0_opsz24.svg");
-  transform: translateY(2px);
+  transform: translateY(1px);
   scale: 0.66;
 }
 .button-type1.backward::before {
   content: url("/images/icons/arrow_back_ios_24dp_5F6368_FILL0_wght600_GRAD0_opsz24.svg");
-  transform: translateY(2px);
+  transform: translateY(1px);
   scale: 0.66;
 }
 .button-type2 {
