@@ -1,0 +1,59 @@
+.loadingScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  color: var(--text-black);
+  background: var(--background-white);
+  opacity: 1;
+  transition: opacity 320ms ease, visibility 320ms ease;
+}
+
+.isExiting {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.iconShell {
+  width: clamp(84px, 18vw, 144px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  animation: loadingPulse 1500ms ease-in-out infinite;
+}
+
+.iconShell svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: loadingSpin 2400ms linear infinite;
+}
+
+@keyframes loadingPulse {
+  0%,
+  100% {
+    transform: scale(0.94);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes loadingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loadingScreen,
+  .iconShell,
+  .iconShell svg {
+    animation: none;
+    transition: none;
+  }
+}

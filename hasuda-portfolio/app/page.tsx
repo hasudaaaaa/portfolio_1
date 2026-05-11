@@ -7,6 +7,7 @@ import { getAllArtworks } from "@/lib/getArtworks";
 import FeaturedArtworkLane from "@/components/FeaturedArtworkLane";
 import DraggableProfileCard from "@/components/DraggableProfileCard";
 import { HasudaIcon } from "@/components/icons/hasuda-icon";
+import TopPageLoadingGate from "@/components/TopPageLoadingGate";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://hasuda.org" },
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <main>
+      <TopPageLoadingGate />
       <section className={styles.hero}>
         <div className={styles.keyvisualBG}>
           <Image src="/images/index/155-1-kv.jpg" alt="keyvisual Illustration" fill priority quality={100}/>
