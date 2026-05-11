@@ -4,10 +4,10 @@
   z-index: 10000;
   display: grid;
   place-items: center;
-  color: var(--text-black);
-  background: var(--background-white);
+  color: var(--background-white);
+  background: var(--dark-blue);
   opacity: 1;
-  transition: opacity 320ms ease, visibility 320ms ease;
+  transition: opacity 500ms ease, visibility 500ms ease;
 }
 
 .isExiting {
@@ -16,18 +16,43 @@
 }
 
 .iconShell {
-  width: clamp(84px, 18vw, 144px);
+  width: clamp(100px, 25vw, 200px);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  animation: loadingPulse 1500ms ease-in-out infinite;
+  /* animation:
+    loadingPulse 1500ms ease-in-out infinite,
+    loadeingColorChange 2400ms linear infinite;*/
 }
 
 .iconShell svg {
   width: 100%;
   height: 100%;
   display: block;
-  animation: loadingSpin 2400ms linear infinite;
+  overflow: visible;
+  /* animation: loadingSpin 2400ms linear infinite; */
+}
+
+.iconShell svg path {
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 3200;
+  stroke-dashoffset: 3200;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.94);
+  animation: logoDraw 1800ms ease-in-out infinite alternate;
+}
+
+.iconShell svg path:nth-of-type(2) {
+  animation-delay: 120ms;
+}
+
+.iconShell svg path:nth-of-type(3) {
+  animation-delay: 240ms;
 }
 
 @keyframes loadingPulse {
@@ -42,17 +67,34 @@
     opacity: 1;
   }
 }
+@keyframes loadeingColorChange {
+  0%,
+  100% {
+    color: var(--mid-blue);
+  }
 
+  50% {
+    color: var(--accent-blue);
+  }
+}
+
+@keyframes logoDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/*
 @keyframes loadingSpin {
   to {
     transform: rotate(360deg);
   }
-}
+}*/
 
 @media (prefers-reduced-motion: reduce) {
   .loadingScreen,
   .iconShell,
-  .iconShell svg {
+  .iconShell svg,
+  .iconShell svg path {
     animation: none;
     transition: none;
   }

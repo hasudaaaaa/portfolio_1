@@ -5,7 +5,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 
 const MIN_LOADING_MS = 1500;
 const MAX_LOADING_MS = 3000;
-const EXIT_ANIMATION_MS = 320;
+const EXIT_ANIMATION_MS = 500;
 
 type Props = {
   forceVisible?: boolean;

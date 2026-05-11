@@ -5,6 +5,7 @@
   position: relative;
   z-index: 3;
   width: 100%;
+  user-select: none;
 }
 .footerContents {
   margin: 0 1rem 0 1rem;

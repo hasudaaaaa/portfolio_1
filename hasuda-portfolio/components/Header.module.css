@@ -7,6 +7,7 @@
   padding: 0.5rem 0;
   z-index: 1100;
   background-color: transparent;
+  user-select: none;
 }
 .headerContent {
   display: flex;
