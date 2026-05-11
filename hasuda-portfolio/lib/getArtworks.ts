@@ -5,30 +5,43 @@ import { remark } from "remark";
 import html from "remark-html";
 import remarkDirective from "remark-directive";
 import { visit } from "unist-util-visit";
+import type { Root } from "mdast";
+import type { LeafDirective } from "mdast-util-directive";
 
 const contentDir = path.join(process.cwd(), "content/artworks");
 
+type EmbedDirectiveNode = Omit<Partial<LeafDirective>, "type"> & {
+  type: LeafDirective["type"] | "html";
+  value?: string;
+};
+
+function replaceDirectiveWithHtml(node: LeafDirective, value: string) {
+  const htmlNode = node as EmbedDirectiveNode;
+
+  Object.assign(htmlNode, {
+    type: "html",
+    value,
+  });
+  delete htmlNode.name;
+  delete htmlNode.attributes;
+  delete htmlNode.children;
+}
+
 function remarkEmbeds() {
-  return (tree: any) => {
-    visit(tree, "leafDirective", (node: any) => {
+  return (tree: Root) => {
+    visit(tree, "leafDirective", (node: LeafDirective) => {
       if (node.name === "youtube") {
         const url = node.attributes?.url ?? "";
-        Object.assign(node, {
-          type: "html",
-          value: `<div class="YT-widget"><iframe width="560" height="315" src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`,
-        });
-        delete node.name;
-        delete node.attributes;
-        delete node.children;
+        replaceDirectiveWithHtml(
+          node,
+          `<div class="YT-widget"><iframe width="560" height="315" src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`
+        );
       } else if (node.name === "twitter") {
         const url = node.attributes?.url ?? "";
-        Object.assign(node, {
-          type: "html",
-          value: `<div class="tweet-widget"><blockquote class="twitter-tweet"><a href="${url}"></a></blockquote></div>`,
-        });
-        delete node.name;
-        delete node.attributes;
-        delete node.children;
+        replaceDirectiveWithHtml(
+          node,
+          `<div class="tweet-widget"><blockquote class="twitter-tweet"><a href="${url}"></a></blockquote></div>`
+        );
       }
     });
   };

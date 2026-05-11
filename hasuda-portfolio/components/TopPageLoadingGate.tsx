@@ -6,6 +6,8 @@ import LoadingScreen from "@/components/LoadingScreen";
 const MIN_LOADING_MS = 1500;
 const MAX_LOADING_MS = 3000;
 const EXIT_ANIMATION_MS = 500;
+const LOADER_STORAGE_KEY = "hasudaTopLoaderShownAt";
+const LOADER_SKIP_TTL_MS = 6 * 60 * 60 * 1000; // 次回ローディング画面表示まで6時間
 
 type Props = {
   forceVisible?: boolean;
@@ -15,6 +17,23 @@ function wait(ms: number) {
   return new Promise<void>((resolve) => {
     window.setTimeout(resolve, ms);
   });
+}
+
+function hasRecentLoaderShown() {
+  try {
+    const shownAt = Number(window.localStorage.getItem(LOADER_STORAGE_KEY));
+    return Number.isFinite(shownAt) && Date.now() - shownAt < LOADER_SKIP_TTL_MS;
+  } catch {
+    return false;
+  }
+}
+
+function markLoaderShown() {
+  try {
+    window.localStorage.setItem(LOADER_STORAGE_KEY, String(Date.now()));
+  } catch {
+    return;
+  }
 }
 
 function waitForTypekitClass() {
@@ -58,6 +77,11 @@ export default function TopPageLoadingGate({ forceVisible = false }: Props) {
   useEffect(() => {
     if (forceVisible) return;
 
+    if (hasRecentLoaderShown()) {
+      const skipTimerId = window.setTimeout(() => setIsVisible(false), 0);
+      return () => window.clearTimeout(skipTimerId);
+    }
+
     let isMounted = true;
     let exitTimerId: number | undefined;
 
@@ -67,6 +91,7 @@ export default function TopPageLoadingGate({ forceVisible = false }: Props) {
     ]).then(() => {
       if (!isMounted) return;
 
+      markLoaderShown();
       setIsExiting(true);
       exitTimerId = window.setTimeout(() => {
         if (isMounted) setIsVisible(false);

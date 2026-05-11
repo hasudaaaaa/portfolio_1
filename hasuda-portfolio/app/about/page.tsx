@@ -97,7 +97,7 @@ export default function About() {
 
             <section>
               <hgroup className="page-head2">
-                <h2>"hasuda.org" について</h2>
+                <h2>&quot;hasuda.org&quot; について</h2>
                 <small>About this website.</small>
               </hgroup>
               <div className={`${styles.bio}`} >
@@ -108,12 +108,12 @@ export default function About() {
                 </div>
                 <div className={styles.resume}>
                   <h2>HASUDA.ORG</h2>
-                  <small>hasuda's Non-portfolio site</small>
+                  <small>hasuda&apos;s Non-portfolio site</small>
                   <p>
                     hasuda.org は、人類の「ケモ耳美少女化」を画策するトランスヒューマニスト団体です。<span className="W3">嘘です。</span>
                   </p>
                   <p className="W3">
-                    当ウェブサイトは蓮田が制作したものたちを公開する場所として用意しました。ポートフォリオサイトと言うには内容の選定がされておらず、アナログデッサンもない上に作品に付すコメントも適当なので、 "Non-portfolio site" と称しています。優しい気持ちでご覧になってください。
+                    当ウェブサイトは蓮田が制作したものたちを公開する場所として用意しました。ポートフォリオサイトと言うには内容の選定がされておらず、アナログデッサンもない上に作品に付すコメントも適当なので、 &quot;Non-portfolio site&quot; と称しています。優しい気持ちでご覧になってください。
                   </p>
                   <p className="W3">
                     個人サイトなのに .org ドメインを使っているのは、これが一番安かったからです。
