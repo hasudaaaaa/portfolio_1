@@ -5,6 +5,7 @@
   z-index: 0;
   overflow: hidden;
   padding-bottom: 0;
+  user-select: none;
 }
 .keyvisualBG,
 .keyvisualCharacter,
