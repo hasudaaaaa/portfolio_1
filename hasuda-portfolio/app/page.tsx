@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { defaultOpenGraph } from "@/lib/metadata";
-import { getAllArtworks } from "@/lib/getArtworks";
+import { getArtworksByIds } from "@/lib/getArtworks";
 import FeaturedArtworkLane from "@/components/FeaturedArtworkLane";
 import DraggableProfileCard from "@/components/DraggableProfileCard";
 import { HasudaIcon } from "@/components/icons/hasuda-icon";
@@ -14,8 +14,19 @@ export const metadata: Metadata = {
   openGraph: { ...defaultOpenGraph, url: "https://hasuda.org" },
 };
 
+// featuredArtworksLane に流れる作品のID
+const FEATURED_ARTWORK_IDS = [
+  "No-162",
+  "No-161",
+  "No-159",
+  "No-155",
+  "No-151",
+  "No-094",
+  "No-089",
+] as const;
+
 export default function Home() {
-  const featuredArtworks = getAllArtworks().slice(0, 8);
+  const featuredArtworks = getArtworksByIds(FEATURED_ARTWORK_IDS);
 
   return (
     <main>

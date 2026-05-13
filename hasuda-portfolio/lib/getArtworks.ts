@@ -94,3 +94,15 @@ export function getAllArtworks(): ArtworkData[] {
     })
     .sort((a, b) => Number(b.number) - Number(a.number));
 }
+
+export function getArtworksByIds(ids: readonly string[]): ArtworkData[] {
+  const artworkById = new Map(getAllArtworks().map((artwork) => [artwork.id, artwork]));
+
+  return ids.map((id) => {
+    const artwork = artworkById.get(id);
+    if (!artwork) {
+      throw new Error(`Artwork not found: ${id}`);
+    }
+    return artwork;
+  });
+}
