@@ -171,9 +171,14 @@ export default function About() {
                 <small>Guidelines</small>
               </hgroup>
               <p className="W3">
-                当ウェブサイトに掲載されている作品の無断転載を禁じます。<br />
-                また、知的財産権的な観点で問題を有している生成AIのトレーニング素材として、当ウェブサイトに掲載されている作品を学習させた結果および関連した内容について、公開、複製、配布、譲渡、転載、転売、送信を行うことを禁じます。
+                当サイトの作品は、個人で鑑賞していただくために公開しています。<br />
+                作品の無断転載、自作発言、無断加工、商用利用、生成AI・機械学習に関連する利用はご遠慮ください。
               </p>
+              <Link href="/guidelines">
+                <div className="button-type1 forward glass-container-type2">
+                  詳細はこちら
+                </div>
+              </Link>
             </section>
           </article>
         </div>

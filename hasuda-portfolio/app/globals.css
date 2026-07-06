@@ -49,6 +49,7 @@ a{
   color: var(--text-black);
 }
 section { padding-bottom: 80px; }
+article { padding-bottom: 80px; }
 article h1 {
   margin-bottom: 2rem;
 }
