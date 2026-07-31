@@ -1,0 +1,5 @@
+.guidelineSec { padding-bottom: 2.5rem; }
+.guidelineSec:last-child { padding-bottom: 0; }
+.guidelineSec a{
+  font-weight: var(--weight-bold);
+}
