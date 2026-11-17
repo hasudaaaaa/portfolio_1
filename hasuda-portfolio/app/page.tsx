@@ -33,7 +33,7 @@ export default function Home() {
       <TopPageLoadingGate />
       <section className={styles.hero}>
         <div className={styles.keyvisualBG}>
-          <Image src="/images/index/155-1-kv.jpg" alt="keyvisual Illustration" fill priority quality={100}/>
+          <Image src="/images/artworks/No-178/178-2s.webp" alt="keyvisual Illustration" fill priority quality={100}/>
         </div> {/*  
         <div className={styles.keyvisualCharacter}>
           <Image src="/images/index/keyvisual_character2.webp" alt="keyvisual Illustration" fill />
@@ -52,7 +52,7 @@ export default function Home() {
         HASUDA&apos;s<br />PORTFOLIO
       </h1>*/}
       <DraggableProfileCard
-        className={`${styles.profileCard} glass-container-type2`}
+        className={`${styles.profileCard} glass-container-type1`}
         draggingClassName={styles.profileCardDragging}
       >
         <div className={styles.profileContents}>
