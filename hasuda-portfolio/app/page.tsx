@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 
 // featuredArtworksLane に流れる作品のID
 const FEATURED_ARTWORK_IDS = [
+  "No-178",
+  "No-177",
+  "No-174",
+  "No-168",
   "No-162",
-  "No-161",
-  "No-159",
   "No-155",
   "No-151",
-  "No-094",
-  "No-089",
 ] as const;
 
 export default function Home() {
